@@ -18,6 +18,7 @@ module TestGuru
 	
     config.time_zone = 'Ekaterinburg'
     config.i18n.available_locales = [:en, :ru]
+    
     config.encoding = 'UTF-8'
 	
   end
