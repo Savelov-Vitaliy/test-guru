@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-User.create! (
+user = User.create! (
     [
       { name: "Vanya" },
       { name: "Vasya" },
@@ -15,7 +15,7 @@ User.create! (
     ]
   )
 
-Category.create! (
+category = Category.create! (
     [
       { title: "Ruby on Rails" },
       { title: "HTML" },
@@ -23,30 +23,37 @@ Category.create! (
     ]
   )
 
-Test.create! (
+test = Test.create! (
     [
-      { title: "RoR basics", level: 1, category_id: 1 },
-      { title: "HTML basics", level: 0, category_id: 2 },
-      { title: "PHP basics",  level: 1, category_id: 3 }
+      { title: "RoR basics",  level: 1, category_id: category[0].id },
+      { title: "HTML basics", level: 0, category_id: category[1].id },
+      { title: "PHP basics",  level: 1, category_id: category[2].id }
     ]
   )
 
 Question.create! (
     [
-      { body: "Как отменить последнюю миграцию?", test_id: 1 },
-      { body: "Как заново создайть базу данных?", test_id: 1 },
-      { body: "С помощью какого тега создаются поля формы?", test_id: 2 }
+      { body: "Как отменить последнюю миграцию?", test_id: test[0].id },
+      { body: "Как заново создайть базу данных?", test_id: test[0].id },
+      { body: "С помощью какого тега создаются поля формы?", test_id: test[1].id }
     ]
   )
 
 Answer.create! (
     [
-      { body: "rails db:rollback", correct: true, test_id: 1, user_id: 1 },
-      { body: "rails db:recreate", correct: false, test_id: 2, user_id: 2 },
-      { body: "form", correct: true, test_id: 2, user_id: 1 }
+      { body: "rails db:rollback", correct: true, test_id: test[0].id },
+      { body: "rails db:recreate", correct: false, test_id: test[1].id },
+      { body: "form", correct: true, test_id: test[1].id }
     ]
   )
 
+UserTest.create! (
+    [
+      { user_id: user[0].id, test_id: test[0].id },
+      { user_id: user[1].id, test_id: test[1].id },
+      { user_id: user[1].id, test_id: test[0].id }
+    ]
+  )
 
 
 

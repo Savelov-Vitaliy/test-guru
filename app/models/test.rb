@@ -1,8 +1,9 @@
 class Test < ApplicationRecord
+belongs_to :category
+has_many :user_test
 
-  def self.tests_category(category)
-    belongs_to :category
-    Test.select(:title).joins(:category).where(:categories => {title: category}).order(id: :desc)    
+  def self.tests_category(category)    
+    joins(:category).where(categories: {title: category}).order(id: :desc).pluck(:title)    
   end
 
 end
