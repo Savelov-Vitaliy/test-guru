@@ -1,6 +1,6 @@
-class CreateUserTests < ActiveRecord::Migration[5.2]
+class CreateTestPassages < ActiveRecord::Migration[5.2]
   def change
-    create_table :user_tests do |t|
+    create_table :test_passages do |t|
       t.references :user, foreign_key: true
       t.references :test, foreign_key: true
 

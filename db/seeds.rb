@@ -47,7 +47,7 @@ Answer.create! (
     ]
   )
 
-UserTest.create! (
+TestPassage.create! (
     [
       { user_id: user[0].id, test_id: test[0].id },
       { user_id: user[1].id, test_id: test[1].id },
