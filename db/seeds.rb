@@ -5,3 +5,59 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+user = User.create! (
+    [
+      { name: "Vanya" },
+      { name: "Vasya" },
+      { name: "Petya" }
+    ]
+  )
+
+category = Category.create! (
+    [
+      { title: "Ruby on Rails" },
+      { title: "HTML" },
+      { title: "PHP" },
+    ]
+  )
+
+test = Test.create! (
+    [
+      { title: "RoR basics",  level: 1, category_id: category[0].id },
+      { title: "HTML basics", level: 0, category_id: category[1].id },
+      { title: "PHP basics",  level: 1, category_id: category[2].id }
+    ]
+  )
+
+Question.create! (
+    [
+      { body: "Как отменить последнюю миграцию?", test_id: test[0].id },
+      { body: "Как заново создайть базу данных?", test_id: test[0].id },
+      { body: "С помощью какого тега создаются поля формы?", test_id: test[1].id }
+    ]
+  )
+
+Answer.create! (
+    [
+      { body: "rails db:rollback", correct: true, test_id: test[0].id },
+      { body: "rails db:recreate", correct: false, test_id: test[1].id },
+      { body: "form", correct: true, test_id: test[1].id }
+    ]
+  )
+
+TestPassage.create! (
+    [
+      { user_id: user[0].id, test_id: test[0].id },
+      { user_id: user[1].id, test_id: test[1].id },
+      { user_id: user[1].id, test_id: test[0].id }
+    ]
+  )
+
+
+
+
+
+
+
