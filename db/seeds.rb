@@ -25,13 +25,13 @@ category = Category.create! (
 
 test = Test.create! (
     [
-      { title: "RoR basics",  level: 1, category_id: category[0].id, user_id: user[0].id },
-      { title: "HTML basics", level: 0, category_id: category[1].id, user_id: user[0].id },
-      { title: "PHP basics",  level: 1, category_id: category[2].id, user_id: user[1].id }
+      { title: "RoR basics",  level: 1, category_id: category[0].id },
+      { title: "HTML basics", level: 0, category_id: category[1].id },
+      { title: "PHP basics",  level: 1, category_id: category[2].id }
     ]
   )
 
-Question.create! (
+question = Question.create! (
     [
       { body: "Как отменить последнюю миграцию?", test_id: test[0].id },
       { body: "Как заново создайть базу данных?", test_id: test[0].id },
@@ -41,9 +41,9 @@ Question.create! (
 
 Answer.create! (
     [
-      { body: "rails db:rollback", correct: true, test_id: test[0].id },
-      { body: "rails db:recreate", correct: false, test_id: test[1].id },
-      { body: "form", correct: true, test_id: test[1].id }
+      { body: "rails db:rollback", correct: true, question_id: question[0].id },
+      { body: "rails db:recreate", correct: false, question_id: question[1].id },
+      { body: "form", correct: true, question_id: question[2].id }
     ]
   )
 
