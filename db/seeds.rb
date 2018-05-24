@@ -25,9 +25,9 @@ category = Category.create! (
 
 test = Test.create! (
     [
-      { title: "RoR basics",  level: 1, category_id: category[0].id },
-      { title: "HTML basics", level: 0, category_id: category[1].id },
-      { title: "PHP basics",  level: 1, category_id: category[2].id }
+      { title: "RoR basics",  level: 1, category_id: category[0].id, author_id: user[2].id },
+      { title: "HTML basics", level: 0, category_id: category[1].id, author_id: user[2].id },
+      { title: "PHP basics",  level: 1, category_id: category[2].id, author_id: user[2].id }
     ]
   )
 
