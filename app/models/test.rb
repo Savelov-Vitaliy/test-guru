@@ -10,9 +10,9 @@ class Test < ApplicationRecord
   scope :hard, -> { where(level: 5..Float::INFINITY) }
   scope :all_by_category, -> (category) { joins(:category).where(categories: {title: category}).order(title: :desc) }
 
-  validates :title, presence: true, uniqueness: { scope: :level,  message: "Тест с такими title и level уже есть в базе" }
   validates :level, numericality: { greater_than: 0, only_integer: true }
-
+  validates :title, presence: true, uniqueness: { scope: :level,  message: "Тест с такими title и level уже есть в базе" }
+  
   def self.category_title(category)
     all_by_category(category).pluck(:title) 
   end
