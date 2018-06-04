@@ -1,7 +1,7 @@
 <div style='margin:5% 30%;'>	
 
 	<h1>Create New Question</h1>
-	<form action="/tests/1/questions" method="post">
+	<form action="/tests/<%= params[:test_id] %>/questions" method="post">
 		<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 		<p>
 			<label for="question-body">Body:</label>
@@ -9,7 +9,7 @@
 		</p>
 		<p>
 			<label for="question-test">Test:</label>
-			<input type="text" name="question[test_id]" id="question-test" value='1' readonly>
+			<input type="text" name="question[test_id]" id="question-test" value='<%= params[:test_id] %>' readonly>						
 		</p>
 		<input type="submit" value="Create">	
 	</form>	
