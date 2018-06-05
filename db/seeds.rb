@@ -34,7 +34,7 @@ test = Test.create! (
 question = Question.create! (
     [
       { body: "Как отменить последнюю миграцию?", test_id: test[0].id },
-      { body: "Как заново создайть базу данных?", test_id: test[0].id },
+      { body: "Как заново создать базу данных?", test_id: test[0].id },
       { body: "С помощью какого тега создаются поля формы?", test_id: test[1].id }
     ]
   )
