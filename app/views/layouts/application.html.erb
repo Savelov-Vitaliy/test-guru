@@ -10,6 +10,20 @@
   </head>
 
   <body>
+    <div style='margin:2% 30%;'>
+      
     <%= yield %>
+
+    <%= link_to "Back", :back %>
+    </div>
+
+    <p>
+      <br>
+      <%= this_year %>. Savelov Vitaliy. 
+      <%= link_to "Test-guru", github_url("Savelov-Vitaliy", "test-guru"), :target => "_blank" %>
+      . My project. Учебный проект в онлайн-школе 
+      <%= link_to "Thinknetica", "https:/thinknetica.com", :target => "_blank"  %> 
+    </p>
+
   </body>
 </html>
