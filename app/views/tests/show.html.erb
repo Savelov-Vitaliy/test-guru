@@ -1,8 +1,12 @@
 <h1>Test <%= params[:id] %></h1>
 
-<%= render "table", data: @test %>
-<%= render "shared/questions_list", data: @test  %>
+<%= render "table", resourse: @test %>
+<%= render "shared/questions_list", resourse: @test  %>
+<br>
 
+<% if params[:deleted_question].present? %>
+  <h3> ! Question "<%= params[:deleted_question] %>" was deleted. </h3>
+<% end %>
 <br>
 
 <%= link_to 'All Tests list', tests_path %> . 

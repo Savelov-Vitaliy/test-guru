@@ -1,11 +1,11 @@
 module ApplicationHelper
 
   def this_year
-    Time.now.year
+    Time.current.year
   end
 
-  def github_url(author, repo)
-    "https:/github.com/#{author}/#{repo}"    
+  def github_url(author, repo)      
+    link_to "Test-guru", "https:/github.com/#{author}/#{repo}", :target => "_blank"     
   end
 
 end
