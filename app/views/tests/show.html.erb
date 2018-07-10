@@ -1,12 +1,32 @@
-<h1>Test <%= params[:id] %></h1>
+<h1>Test <%= @test.id %></h1>
 
-<%= render "table", resourse: @test %>
-<%= render "shared/questions_list", resourse: @test  %>
+<table border=1 rules=cols cellpadding=10 cellspacing=0 >
+  <tr style="border-bottom: 1px solid black; font-weight: 600;">
+    <th>Title</th>
+    <th>Level</th>
+    <th>Category</th>
+    <th>Author</th>
+    <th>Questions</th>
+    <th colspan=3>Actions</th>
+  </tr>
+
+  <%= render @test %>
+</table>
+
+<h2>Questions</h2>
+
+<table border=1 rules=cols cellpadding=10 cellspacing=0 >
+  <tr style="border-bottom: 1px solid black; font-weight: 600;">
+    <th>Id</th>
+    <th>Body</th>    
+    <th colspan=2>Actions</th>
+  </tr>
+
+  <%= render @test.questions %>
+</table>  
+
 <br>
-
-<% if params[:deleted_question].present? %>
-  <h3> ! Question "<%= params[:deleted_question] %>" was deleted. </h3>
-<% end %>
+<%= notice %>
 <br>
 
 <%= link_to 'All Tests list', tests_path %> . 

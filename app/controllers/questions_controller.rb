@@ -1,7 +1,7 @@
 class QuestionsController < ApplicationController
 
-  before_action :find_test, only: %i[index new create]
-  before_action :find_question, only: %i[show edit destroy update]
+  before_action :find_test, only: %i[new create]
+  before_action :find_question, only: %i[edit destroy update]
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_test_not_found
 
@@ -31,8 +31,8 @@ class QuestionsController < ApplicationController
   end
 
   def destroy
-    @question.destroy    
-    redirect_to test_path(id: @question.test.id, deleted_question: @question.body)
+    @question.destroy        
+    redirect_to test_path(@question.test), notice: "Вопрос '#{@question.body}' был удален." 
   end
 
   private
