@@ -10,6 +10,14 @@
   </head>
 
   <body>
+    <div style='margin:2% 30%;'>
+
     <%= yield %>
+
+    <%= link_to "Back", :back %>
+    </div>
+
+    <%= render "shared/footer" %>
+
   </body>
 </html>

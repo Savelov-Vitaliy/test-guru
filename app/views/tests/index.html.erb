@@ -1,0 +1,18 @@
+<h1>All Tests list</h1>
+
+<table border=1 rules=cols cellpadding=10 cellspacing=0 >
+	<tr style="border-bottom: 1px solid black; font-weight: 600;">
+		<th>Title</th>
+		<th>Level</th>
+		<th>Category</th>
+		<th>Author</th>
+		<th>Questions</th>
+		<th colspan=3>Actions</th>
+	</tr>
+
+	<%= render @tests %>
+</table>
+
+<br>
+
+<%= link_to 'Create new Test', new_test_path %> .  
