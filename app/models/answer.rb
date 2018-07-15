@@ -9,6 +9,6 @@ class Answer < ApplicationRecord
   private
 
   def validate_answers
-    errors.add(:question, "У одного вопроса не может быть больше четырех ответов!") if question.answers.count >= 4 
+    errors.add(:question, "У одного вопроса не может быть больше четырех ответов!") if question.answers.count >= 4
   end
 end
