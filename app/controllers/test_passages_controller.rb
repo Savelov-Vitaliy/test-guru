@@ -6,12 +6,10 @@ class TestPassagesController < ApplicationController
   end
 
   def result
-
   end
 
   def update
     @test_passage.accept!(params[:answers_ids])
-    #@test_passage.correct_questions += 1 if @test_passage.current_question.answers.correct.ids.sort == params[:answers_ids].map(&:to_i).sort
 
     if @test_passage.completed?
       redirect_to result_test_passage_path(@test_passage)
@@ -25,7 +23,4 @@ class TestPassagesController < ApplicationController
   def set_test_passage
     @test_passage = TestPassage.find(params[:id])
   end
-
-
-
 end

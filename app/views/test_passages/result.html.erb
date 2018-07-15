@@ -2,13 +2,12 @@
 
 <h2>
   Success
-  <% success = @test_passage.correct_questions*100/@test_passage.test.questions.map{|q| q.answers.correct}.count %>
-  <big class="<%= success >= 85 ? "passed" : "failed"  %>">
-    <%= success %>%
+  <big class="<%= @test_passage.success >= 85 ? "passed" : "failed"  %>">
+    <%= @test_passage.success %>%
   </big>
   <br>
   <br>
-  <%= success >= 85 ? "Test passed!" : "Test failed!" %>
+  <%= @test_passage.success >= 85 ? "Test passed!" : "Test failed!" %>
 </h2>
 
 <br>
