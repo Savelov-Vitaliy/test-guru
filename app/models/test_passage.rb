@@ -5,6 +5,8 @@ class TestPassage < ApplicationRecord
 
   before_save :before_save_set_current_question, on: :create
 
+  PASSING_SCORE = 85
+
   def completed?
     current_question.nil?
   end
@@ -15,34 +17,41 @@ class TestPassage < ApplicationRecord
   end
 
   def question_number
-    test.questions.sort.index(current_question) + 1
+    test.questions.order(:id).where('id < ?', current_question.id).count + 1
   end
 
   def questions_count
     test.questions.count
   end
 
-  def success
+  def score
     correct_questions * 100 / test.questions.count
+  end
+
+  def passed?
+    score >= PASSING_SCORE
   end
 
   private
 
   def before_save_set_current_question
-    if current_question.nil?
-      self.current_question = test.questions.first if test.present?
+    self.current_question = set_current_question
+  end
+
+  def set_current_question
+    if current_question.nil? && test.present?
+      test.questions.first
     else
-      self.current_question = test.questions.order(:id).where("id > ?", current_question.id).first
+      next_question
     end
   end
 
+  def next_question
+    test.questions.order(:id).where("id > ?", current_question.id).first
+  end
 
   def correct_answer?(answer_ids)
-    correct_answers.ids.sort == answer_ids.map(&:to_i).sort
-    #correct_answers_count = correct_answers.count
-
-    #(correct_answers_count == correct_answers.where(id: answer_ids).count) &&
-    #(correct_answers_count == answer_ids.count)
+    correct_answers.ids.sort == answer_ids.map(&:to_i).sort if !answer_ids.nil?
   end
 
   def correct_answers

@@ -2,12 +2,12 @@
 
 <h2>
   Success
-  <big class="<%= @test_passage.success >= 85 ? "passed" : "failed"  %>">
-    <%= @test_passage.success %>%
+  <big class="<%= @test_passage.passed? ? "passed" : "failed"  %>">
+    <%= @test_passage.score %>%
   </big>
   <br>
   <br>
-  <%= @test_passage.success >= 85 ? "Test passed!" : "Test failed!" %>
+  <%= @test_passage.passed? ? "Test passed!" : "Test failed!" %>
 </h2>
 
 <br>
