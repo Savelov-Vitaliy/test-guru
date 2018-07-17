@@ -3,7 +3,7 @@
 <h2>
   Success:
   <big class="<%= @test_passage.passed? ? "passed" : "failed"  %>">
-    <%= @test_passage.score %>%
+    <%= @test_passage.score.round 0 %>%
   </big>
   <br>
   <br>

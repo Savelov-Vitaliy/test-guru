@@ -3,7 +3,7 @@ class TestPassage < ApplicationRecord
   belongs_to :test
   belongs_to :current_question, class_name: "Question", optional: true
 
-  before_save :before_save_set_current_question, on: :create
+  before_save :before_save_set_current_question
 
   PASSING_SCORE = 85
 
@@ -25,7 +25,7 @@ class TestPassage < ApplicationRecord
   end
 
   def score
-    correct_questions * 100 / test.questions.count
+    correct_questions * 100.00 / test.questions.count
   end
 
   def passed?
@@ -35,23 +35,19 @@ class TestPassage < ApplicationRecord
   private
 
   def before_save_set_current_question
-    self.current_question = set_current_question
-  end
-
-  def set_current_question
-    if current_question.nil? && test.present?
-      test.questions.first
-    else
-      next_question
-    end
+    self.current_question = next_question
   end
 
   def next_question
-    test.questions.order(:id).where("id > ?", current_question.id).first
+    if current_question.nil?
+      test.questions.first
+    else
+      test.questions.order(:id).where("id > ?", current_question.id).first
+    end
   end
 
   def correct_answer?(answer_ids)
-    correct_answers.ids.sort == answer_ids.map(&:to_i).sort if !answer_ids.nil?
+    correct_answers.ids.sort == Array(answer_ids).map(&:to_i).sort
   end
 
   def correct_answers
