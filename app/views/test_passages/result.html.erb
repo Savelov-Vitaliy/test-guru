@@ -1,0 +1,14 @@
+<h1>The "<%= @test_passage.test.title %>" Test was Completed!</h1>
+
+<h2>
+  Success:
+  <big class="<%= @test_passage.passed? ? "passed" : "failed"  %>">
+    <%= @test_passage.score.round 0 %>%
+  </big>
+  <br>
+  <br>
+  <%= @test_passage.passed? ? "Test passed!" : "Test failed!" %>
+</h2>
+
+<br>
+<%= link_to "All Tests", tests_path %> .
