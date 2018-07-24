@@ -1,5 +1,6 @@
 class TestsController < ApplicationController
 
+  before_action :authenticate_user!
   before_action :find_test, only: %i[start show edit update destroy]
   before_action :set_user, only: :start
 
@@ -49,7 +50,7 @@ class TestsController < ApplicationController
   private
 
   def set_user
-    @user = User.first
+    @user = User.find_by(id: session[:user_id])
   end
 
   def find_test
