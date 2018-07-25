@@ -1,24 +1,22 @@
 class ApplicationController < ActionController::Base
 
-helper_method :current_user,
-              :logged_in?
+  helper_method :current_user,
+                :logged_in?
 
-before_action :authenticate_user!
+  private
 
-private
-
-def authenticate_user!
-  unless current_user
-    redirect_to login_path
+  def authenticate_user!
+    unless current_user
+      redirect_to login_path
+    end
   end
-end
 
-def current_user
-  @current_user ||= User.find_by(id: session[:user_id]) if session[:user_id]
-end
+  def current_user
+    @current_user ||= User.find_by(id: session[:user_id]) if session[:user_id]
+  end
 
-def logged_in?
-  current_user.present?
-end
+  def logged_in?
+    current_user.present?
+  end
 
 end

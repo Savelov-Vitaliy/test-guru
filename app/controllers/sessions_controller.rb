@@ -1,8 +1,7 @@
 class SessionsController < ApplicationController
 
-  skip_before_action :authenticate_user!, only: %i[new create]
-
   def new
+    cookies[:main_page_url] = root_path
   end
 
   def create
@@ -10,7 +9,7 @@ class SessionsController < ApplicationController
 
     if user&.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to root_path
+      redirect_to cookies[:main_page_url]
     else
       flash.now[:alert] = "Wrong password or email"
       render :new
@@ -18,8 +17,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    reset_session
-    # session.delete(:user_id)
+    session.delete(:user_id)
     redirect_to root_path
   end
 
