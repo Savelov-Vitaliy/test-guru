@@ -9,7 +9,7 @@ class User < ApplicationRecord
   validates :name, presence: true
   validates :email, presence: true,
                     format: { with: /\w+@\w+\.\w/, message: "only allows letters" },
-                    uniqueness: { scope: :email,  message: "User with this email already exists" }
+                    uniqueness: { message: "User with this email already exists" }
 
   has_secure_password
 

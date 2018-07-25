@@ -1,7 +1,6 @@
 class SessionsController < ApplicationController
 
   def new
-    cookies[:main_page_url] = root_path
   end
 
   def create
@@ -9,7 +8,7 @@ class SessionsController < ApplicationController
 
     if user&.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to cookies[:main_page_url]
+      redirect_to cookies[:requested_url].present? ? cookies[:requested_url] : root_path
     else
       flash.now[:alert] = "Wrong password or email"
       render :new
