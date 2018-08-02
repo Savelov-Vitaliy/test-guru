@@ -10,11 +10,24 @@
   </head>
 
   <body>
+    <% if logged_in? %>
+
+      <p class="nav user">
+
+        <%= link_to "Test Guru", root_path %>.
+        Welcome, <b><%= current_user.name %></b> Guru.
+        <%= link_to "Exit",
+                    logout_path,
+                    method: :delete,
+                    data: { confirm: "Exit. Are you sure?"} %>
+      </p>
+    <% end %>
+
     <div style='margin:2% 30%;'>
+    <h1><%= link_to 'Test Guru', root_path %> </h1>
 
     <%= yield %>
 
-    <%= link_to "Back", :back %>
     </div>
 
     <%= render "shared/footer" %>
