@@ -10,18 +10,23 @@
   </head>
 
   <body>
-    <% if logged_in? %>
-
+    <% if user_signed_in? %>
       <p class="nav user">
-
         <%= link_to "Test Guru", root_path %>.
-        Welcome, <b><%= current_user.name %></b> Guru.
+        Welcome, <b><%= current_user.first_name %> <%= current_user.last_name %></b> Guru.
+
+        <% if @admin %>
+          <%= link_to "Admin Panel", admin_tests_path %>.
+        <% end %>
+
         <%= link_to "Exit",
-                    logout_path,
+                    destroy_user_session_path,
                     method: :delete,
                     data: { confirm: "Exit. Are you sure?"} %>
       </p>
     <% end %>
+
+    <%= render "shared/flash" %>
 
     <div style='margin:2% 30%;'>
     <h1><%= link_to 'Test Guru', root_path %> </h1>
