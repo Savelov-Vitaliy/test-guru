@@ -1,11 +1,9 @@
 class TestsController < AuthenticatedController
 
-  before_action :authenticate_user!
   before_action :find_test, only: %i[start]
 
   def index
     @tests = Test.all
-    @admin = current_user.type == 'Admin' ?  true : false
   end
 
   def start

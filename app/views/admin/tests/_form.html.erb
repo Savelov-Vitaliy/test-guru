@@ -16,9 +16,6 @@
     <%= form.collection_select :category_id, Category.all, :id, :title, prompt: true %>
   </p>
 
-  <%= hidden_field_tag "test[author_id]", @author_id  %>
-
-
   <%= form.submit %>
   <% end %>
 
