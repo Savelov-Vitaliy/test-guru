@@ -8,7 +8,7 @@ class TestsController < AuthenticatedController
 
   def start
     current_user.tests.push(@test)
-    redirect_to current_user.test_passage(@test)
+    redirect_to current_user.test_passage(@test), notice: t('.notice')
   end
 
 

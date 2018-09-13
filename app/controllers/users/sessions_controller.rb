@@ -11,7 +11,7 @@ class Users::SessionsController < Devise::SessionsController
   # POST /resource/sign_in
   def create
     super
-    set_flash_message! :notice, "Hi #{current_user.first_name} #{current_user.last_name}!"
+    set_flash_message! :notice, " #{current_user.first_name} #{current_user.last_name}!"
   end
 
   # DELETE /resource/sign_out

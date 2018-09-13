@@ -11,10 +11,10 @@ class Admin::TestsController < Admin::BaseController
   end
 
   def create
-    current_user.own_tests.new(test_params)
+    @test = current_user.own_tests.new(test_params)
 
     if @test.save
-      redirect_to admin_tests_url
+      redirect_to admin_tests_url, notice: notice_message
     else
       render :new
     end
@@ -28,7 +28,7 @@ class Admin::TestsController < Admin::BaseController
 
   def update
     if @test.update(test_params)
-      redirect_to admin_tests_url
+      redirect_to admin_tests_url, notice: notice_message
     else
       render :edit
     end
@@ -36,7 +36,7 @@ class Admin::TestsController < Admin::BaseController
 
   def destroy
     @test.destroy
-    redirect_to admin_tests_url
+    redirect_to admin_tests_url, notice: notice_message
   end
 
   private
@@ -47,6 +47,10 @@ class Admin::TestsController < Admin::BaseController
 
   def test_params
     params.require(:test).permit(:title, :level, :category_id)
+  end
+
+  def notice_message
+    t('.notice', test: @test.title)
   end
 
 end

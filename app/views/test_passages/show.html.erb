@@ -1,9 +1,7 @@
-<h3>Passing the <%= @test_passage.test.title %> Test</h3>
+<h3><%= "#{t('.title')} \'#{@test_passage.test.title}\'" %> </h3>
 
 <p>
-  Question
-  <%= @test_passage.question_number %> of
-  <%= @test_passage.questions_count %> <br>
+  <%= "#{t('.question')} #{@test_passage.question_number} #{t('.of')} #{@test_passage.questions_count}" %> <br>
   <b>
     <%= @test_passage.current_question.body %>
   </b>
@@ -18,7 +16,7 @@
   <% end %>
 
   <p>
-    <%= form.submit "Next" %>
+    <%= form.submit t('.next') %>
   </p>
 
 <% end %>

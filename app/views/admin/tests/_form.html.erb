@@ -2,17 +2,17 @@
   <%= render "shared/errors", resouse: @test %>
 
   <p>
-    <%= form.label :title %><br>
+    <%= form.label :title, t('.title')  %><br>
     <%= form.text_field :title %>
   </p>
 
   <p>
-    <%= form.label :level %><br>
+    <%= form.label :level, t('.level') %><br>
     <%= form.text_field :level %>
   </p>
 
    <p>
-    <%= form.label :category_id %><br>
+    <%= form.label :category_id, t('.category') %><br>
     <%= form.collection_select :category_id, Category.all, :id, :title, prompt: true %>
   </p>
 

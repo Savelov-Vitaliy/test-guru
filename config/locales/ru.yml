@@ -1,0 +1,126 @@
+ru:
+
+  helpers:
+    select:
+      prompt: "- выберите из списка -"
+
+  errors:
+    messages:
+      blank: "Поле %{field} не может быть пустым"
+
+  tests:
+    start:
+      notice: "Отвечай на вопросы, будь внимателен и удачи!"
+
+  admin:
+    tests:
+      index:
+        authorization_error_message: "У вас недостаточно прав для просмотра данной страницы" # "You are not authorized to view this page."
+      create:
+        notice: "Тест \'%{test}\' был успешно создан."
+      destroy:
+        notice: "Тест \'%{test}\' был успешно удален."
+      update:
+        notice: "Тест \'%{test}\' был успешно обновлен."
+      form:
+        title:  "Название"
+        level:  "Уровень"
+        category: "Категория"
+      test:
+        show: "показать"
+        edit: "изменить"
+        delete: "удалить"
+        confirmation: "Удалить этот тест?"
+      edit:
+        title: "Редактирование вопроса"
+      index:
+        all_test_list: "Список всех тестов"
+        title: "Название"
+        level:  "Уровень"
+        category: "Категория"
+        author: "Автор"
+        questions: "Вопросы"
+        actions: "Действия"
+        create_new_test: "Создать новый тест"
+      show:
+        test: "Тест"
+        title: "Название"
+        level:  "Уровень"
+        category: "Категория"
+        author: "Автор"
+        questions: "Вопросы"
+        actions: "Действия"
+        id: "id"
+        body: "Вопрос"
+        create_new_question: "Создать новый вопрос"
+      new:
+        title: "Созадать новый тест" # Create new Test
+
+    questions:
+      create:
+        notice: "Вопрос \'%{question}\' был успешно создан."
+      destroy:
+        notice: "Вопрос \'%{question}\' был успешно удален."
+      update:
+        notice:  "Вопрос \'%{question}\' был успешно обновлен."
+      question_not_found: "Вопрос не найден" # "Question was not found."
+      show:
+        title: "Вопрос к тесту \'%{title}\'"
+        answers: "Ответы"
+        new_answer: "Новый ответ"
+      question:
+        show: "показать"
+        edit: "изменить"
+        delete: "удалить"
+        confirmation: "Удалить этот вопрос?"
+      form:
+        title: "Вопрос \"%{question}\""
+        body: "Вопрос"
+
+    answers:
+      create:
+        notice:  "Ответ \'%{answer}\' был успешно создан." # 'Answer was successfully created.'
+      update:
+        notice:  "Ответ \'%{answer}\' был успешно обновлен." # 'Answer was successfully updated.'
+      destroy:
+        notice:  "Ответ \'%{answer}\' был успешно удален." # 'Answer was successfully updated.'
+      answer:
+        show: "показать"
+        edit: "изменить"
+        delete: "удалить"
+        confirmation: "Удалить этот ответ?" # 'Are you sure?'
+      edit:
+        title: "Редактирование ответа" #Editing Answer
+      form:
+        correct: "Верный"
+        body: "Ответ"
+      new:
+        title: "Новый ответ"
+      show:
+        title: "Просмотр ответа"
+        answer: "Ответ"
+        correct: "Верный"
+    nav:
+      admin_panel: "Панель администратора"
+      exit_confirmation: "Выйти?" # "Exit. Are you sure?"
+
+  shared:
+    links:
+      all_tests: "Все тесты"
+      back: "Назад"
+
+  test_passages:
+    show:
+      title: "Прохождение теста"
+      question: "Вопрос"
+      of: "из"
+      next: "Следующий"
+    result:
+      title: "тест завершен"
+      success: "Результат"
+      passed: "успех"
+      failed: "провал"
+      test_failed: "Тест провален!"
+      test_passed: "Тест пройден!"
+
+

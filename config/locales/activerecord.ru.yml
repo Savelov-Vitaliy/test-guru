@@ -1,0 +1,28 @@
+ru:
+
+  activerecord:
+    models:
+      test: "Тест"
+      user: "Пользователь"
+      answer: "Ответ"
+      question: "Вопрос"
+
+    attribute:
+      test:
+        title:  "Название"
+        level:  "Уровень"
+        author: "Автор"
+
+      user:
+        first_name: "Имя"
+        last_name:  "Фамилия"
+
+      question:
+        body: "Вопрос"
+
+      category:
+        title:  "Название"
+
+      answer:
+        body: "Ответ"
+        correct:  "Верный"
