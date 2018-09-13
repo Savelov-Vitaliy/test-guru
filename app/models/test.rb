@@ -1,6 +1,6 @@
 class Test < ApplicationRecord
   belongs_to :category
-  has_many :questions
+  has_many :questions, dependent: :destroy
   has_many :test_passages
   has_many :users, through: :test_passages
   belongs_to :author, class_name: 'User', foreign_key: 'author_id'
@@ -12,9 +12,9 @@ class Test < ApplicationRecord
 
   validates :level, numericality: { greater_than: 0, only_integer: true }
   validates :title, presence: true, uniqueness: { scope: :level,  message: "Тест с такими title и level уже есть в базе" }
-  
+
   def self.category_title(category)
-    all_by_category(category).pluck(:title) 
+    all_by_category(category).pluck(:title)
   end
 
 end
