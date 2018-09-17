@@ -1,15 +1,15 @@
-<h3>The "<%= @test_passage.test.title %>" Test was Completed!</h3>
+<h3><%= " \"#{@test_passage.test.title}\" #{t('.title')}" %></h3>
 
 <h2>
-  Success:
-  <big class="<%= @test_passage.passed? ? "passed" : "failed"  %>">
+  <%= t('.success') %>:
+  <big class="<%= @test_passage.passed? ? t('.passed') : t('.failed') %>">
     <%= @test_passage.score.round 0 %>%
   </big>
   <br>
   <br>
-  <%= @test_passage.passed? ? "Test passed!" : "Test failed!" %>
+  <%= @test_passage.passed? ? t('.test_passed') : t('.test_failed') %>
 </h2>
 
 <br>
 
-<%= link_to "All Tests", tests_path %>
+<%= render "shared/links" %>

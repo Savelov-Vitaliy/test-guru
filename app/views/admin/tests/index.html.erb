@@ -1,13 +1,13 @@
-<h3>All Tests list</h3>
+<h3> <%= t('.all_test_list') %> </h3>
 
 <table border=1 rules=cols cellpadding=10 cellspacing=0 >
 	<tr style="border-bottom: 1px solid black; font-weight: 600;">
-		<th>Title</th>
-		<th>Level</th>
-		<th>Category</th>
-		<th>Author</th>
-		<th>Questions</th>
-		<th colspan=4>Actions</th>
+		<th> <%= t('.title') %> </th>
+		<th> <%= t('.level') %> </th>
+		<th> <%= t('.category') %> </th>
+		<th> <%= t('.author') %> </th>
+		<th> <%= t('.questions') %> </th>
+		<th colspan=4> <%= t('.actions') %> </th>
 	</tr>
 
 	<%= render @tests %>
@@ -15,4 +15,4 @@
 
 <br>
 
-<%= link_to 'Create new Test', new_admin_test_path %>
+<%= link_to t('.create_new_test'), new_admin_test_path %>

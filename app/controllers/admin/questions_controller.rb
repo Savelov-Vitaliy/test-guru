@@ -17,7 +17,7 @@ class Admin::QuestionsController < Admin::BaseController
 
   def update
     if @question.update(question_params)
-      redirect_to [:admin, @question.test]
+      redirect_to [:admin, @question.test], notice: notice_message
     else
       render :edit
     end
@@ -27,7 +27,7 @@ class Admin::QuestionsController < Admin::BaseController
     @question = @test.questions.build(question_params)
 
     if @question.save
-      redirect_to [:admin, @question.test]
+      redirect_to [:admin, @question.test], notice: notice_message
     else
       render :new
     end
@@ -35,7 +35,7 @@ class Admin::QuestionsController < Admin::BaseController
 
   def destroy
     @question.destroy
-    redirect_to admin_test_path(@question.test), notice: "Вопрос '#{@question.body}' был удален."
+    redirect_to admin_test_path(@question.test), notice: notice_message
   end
 
   private
@@ -53,7 +53,10 @@ class Admin::QuestionsController < Admin::BaseController
   end
 
   def rescue_with_test_not_found
-    render plain: "Question was not found."
+    render plain: t('.question_not_found')
   end
 
+  def notice_message
+    t('.notice', question: @question.body)
+  end
 end
