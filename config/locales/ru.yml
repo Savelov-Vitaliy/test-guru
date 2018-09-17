@@ -15,7 +15,7 @@ ru:
   admin:
     tests:
       index:
-        authorization_error_message: "У вас недостаточно прав для просмотра данной страницы" # "You are not authorized to view this page."
+        authorization_error_message: "У вас недостаточно прав для просмотра данной страницы"
       create:
         notice: "Тест \'%{test}\' был успешно создан."
       destroy:
@@ -54,7 +54,7 @@ ru:
         body: "Вопрос"
         create_new_question: "Создать новый вопрос"
       new:
-        title: "Созадать новый тест" # Create new Test
+        title: "Созадать новый тест"
 
     questions:
       create:
@@ -63,7 +63,7 @@ ru:
         notice: "Вопрос \'%{question}\' был успешно удален."
       update:
         notice:  "Вопрос \'%{question}\' был успешно обновлен."
-      question_not_found: "Вопрос не найден" # "Question was not found."
+      question_not_found: "Вопрос не найден"
       show:
         title: "Вопрос к тесту \'%{title}\'"
         answers: "Ответы"
@@ -79,18 +79,18 @@ ru:
 
     answers:
       create:
-        notice:  "Ответ \'%{answer}\' был успешно создан." # 'Answer was successfully created.'
+        notice:  "Ответ \'%{answer}\' был успешно создан."
       update:
-        notice:  "Ответ \'%{answer}\' был успешно обновлен." # 'Answer was successfully updated.'
+        notice:  "Ответ \'%{answer}\' был успешно обновлен."
       destroy:
-        notice:  "Ответ \'%{answer}\' был успешно удален." # 'Answer was successfully updated.'
+        notice:  "Ответ \'%{answer}\' был успешно удален."
       answer:
         show: "показать"
         edit: "изменить"
         delete: "удалить"
-        confirmation: "Удалить этот ответ?" # 'Are you sure?'
+        confirmation: "Удалить этот ответ?"
       edit:
-        title: "Редактирование ответа" #Editing Answer
+        title: "Редактирование ответа"
       form:
         correct: "Верный"
         body: "Ответ"
@@ -102,7 +102,7 @@ ru:
         correct: "Верный"
     nav:
       admin_panel: "Панель администратора"
-      exit_confirmation: "Выйти?" # "Exit. Are you sure?"
+      exit_confirmation: "Выйти?"
 
   shared:
     links:
@@ -123,4 +123,6 @@ ru:
       test_failed: "Тест провален!"
       test_passed: "Тест пройден!"
 
-
+  tests:
+    test:
+      start:  "старт"

@@ -29,5 +29,131 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-en:
-  hello: "Hello world"
+ru:
+
+  helpers:
+    select:
+      prompt: "- select -"
+
+  errors:
+    messages:
+      blank: "Field %{field} can not be empty"
+
+  tests:
+    start:
+      notice: "Answer the questions, be attentive and good luck!"
+
+  admin:
+    tests:
+      index:
+        authorization_error_message: "You are not authorized to view this page."
+      create:
+        notice: "Test \'%{test}\' was successfully created."
+      destroy:
+        notice: "Тест \'%{test}\' was successfully deleted."
+      update:
+        notice: "Тест \'%{test}\' was successfully updated."
+      form:
+        title:  "Title"
+        level:  "Level"
+        category: "Category"
+      test:
+        show: "show"
+        edit: "edit"
+        delete: "delete"
+        confirmation: "Delete this test?"
+      edit:
+        title: "Editing Question"
+      index:
+        all_test_list: "All tests list"
+        title: "Title"
+        level:  "Level"
+        category: "Category"
+        author: "author"
+        questions: "Questions"
+        actions: "Atcions"
+        create_new_test: "Create new test"
+      show:
+        test: "Test"
+        title: "Title"
+        level:  "Level"
+        category: "Category"
+        author: "Author"
+        questions: "Questions"
+        actions: "Actions"
+        id: "id"
+        body: "Question"
+        create_new_question: "Create new question"
+      new:
+        title: "Create new test"
+
+    questions:
+      create:
+        notice: "Question \'%{question}\' was successfully created."
+      destroy:
+        notice: "Question \'%{question}\' was successfully deleted."
+      update:
+        notice:  "Question \'%{question}\' was successfully updated."
+      question_not_found: "Question was not found."
+      show:
+        title: "Question Test  \'%{title}\'"
+        answers: "Answers"
+        new_answer: "New answer"
+      question:
+        show: "show"
+        edit: "edit"
+        delete: "delete"
+        confirmation: "Delete this question?"
+      form:
+        title: "Question \"%{question}\""
+        body: "Question"
+
+    answers:
+      create:
+        notice:  "Answer \'%{answer}\' was successfully created."
+      update:
+        notice:  "Answer \'%{answer}\' was successfully updated"
+      destroy:
+        notice:  "Answer \'%{answer}\' was successfully deleted."
+      answer:
+        show: "show"
+        edit: "edit"
+        delete: "delete"
+        confirmation: "Delete this answer?"
+      edit:
+        title: "Editing Answer"
+      form:
+        correct: "Correct"
+        body: "Answer"
+      new:
+        title: "New answer"
+      show:
+        title: "Show Answer"
+        answer: "Answer"
+        correct: "Correct"
+    nav:
+      admin_panel: "Admin Panel"
+      exit_confirmation: "Exit?"
+
+  shared:
+    links:
+      all_tests: "All Tests"
+      back: "Back"
+
+  test_passages:
+    show:
+      title: "Passing Test"
+      question: "Question"
+      of: "of"
+      next: "Next"
+    result:
+      title: "Test completed"
+      success: "Success"
+      passed: "passed"
+      failed: "failed"
+      test_failed: "Test failed!"
+      test_passed: "Test passed!"
+
+  tests:
+    test:
+      start:  "start"
