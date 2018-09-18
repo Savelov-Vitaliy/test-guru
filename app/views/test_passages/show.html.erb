@@ -1,24 +1,45 @@
-<h3><%= "#{t('.title')} \'#{@test_passage.test.title}\'" %> </h3>
+<div class="row justify-content-center mt-3">
+  <div class="col-auto">
 
-<p>
-  <%= "#{t('.question')} #{@test_passage.question_number} #{t('.of')} #{@test_passage.questions_count}" %> <br>
-  <b>
-    <%= @test_passage.current_question.body %>
-  </b>
-</p>
+    <div class="card">
+      <div class="card-header">
+        <%= "#{t('.title')} \'#{@test_passage.test.title}\'" %>
+      </div>
 
-<%= form_with url: test_passage_path(@test_passage), local: true, method: :put do |form| %>
-  <%= form.collection_check_boxes :answers_ids, @test_passage.current_question.answers, :id, :body, include_hidden: false do |b| %>
-    <p>
-      <%= b.check_box id: "anwer_ids_#{b.object.id}" %>
-      <%= b.label %>
-    </p>
-  <% end %>
+       <div class="card-body">
+        <div class="card-title">
+          <b><%= @test_passage.current_question.body %></b>
+          <br>
+          <div class="text-right">
+            <small class="pull-right text-muted">
+              <%= "#{t('.question')} #{@test_passage.question_number} #{t('.of')} #{@test_passage.questions_count}" %>
+            </small>
+          </div>
+        </div>
 
-  <p>
-    <%= form.submit t('.next') %>
-  </p>
+        <div class=card-text">
+          <div class="form-group mb-0">
+            <%= form_with url: test_passage_path(@test_passage), local: true, method: :put do |form| %>
 
-<% end %>
+              <%= form.collection_check_boxes :answers_ids, @test_passage.current_question.answers, :id, :body, include_hidden: false do |b| %>
+                <div class="form-check">
+                    <%= b.check_box class: "form-check-input" %>
+                    <%= b.label  class: "form-check-label"  %>
+                </div>
+              <% end %>
 
-<%= render "shared/links" %>
+              <div class="text-right mt-3">
+                <%= form.submit t('.next'), class: "btn btn-primary" %>
+              </div>
+
+            <% end %>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <%= render "shared/links" %>
+
+  </div>
+</div>

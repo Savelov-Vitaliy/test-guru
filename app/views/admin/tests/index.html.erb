@@ -1,18 +1,23 @@
-<h3> <%= t('.all_test_list') %> </h3>
+<div class="row justify-content-center mt-3">
+  <div class="col-auto">
 
-<table border=1 rules=cols cellpadding=10 cellspacing=0 >
-	<tr style="border-bottom: 1px solid black; font-weight: 600;">
-		<th> <%= t('.title') %> </th>
-		<th> <%= t('.level') %> </th>
-		<th> <%= t('.category') %> </th>
-		<th> <%= t('.author') %> </th>
-		<th> <%= t('.questions') %> </th>
-		<th colspan=4> <%= t('.actions') %> </th>
-	</tr>
+    <h3> <%= t('.all_test_list') %> </h3>
 
-	<%= render @tests %>
-</table>
+    <table class="table table-sm" >
+      <thead class="thead-light">
+        <tr>
+		      <th scope="col"> <%= t('.title') %> </th>
+      		<th scope="col"> <%= t('.level') %> </th>
+      		<th scope="col"> <%= t('.category') %> </th>
+      		<th scope="col"> <%= t('.author') %> </th>
+      		<th scope="col"> <%= t('.questions') %> </th>
+      		<th scope="col" colspan=3> <%= t('.actions') %> </th>
+      	</tr>
+      </thead>
 
-<br>
+	   <%= render @tests %>
+    </table>
 
-<%= link_to t('.create_new_test'), new_admin_test_path %>
+    <%= link_to t('.create_new_test'), new_admin_test_path %>
+  </div>
+</div>

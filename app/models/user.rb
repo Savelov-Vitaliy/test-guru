@@ -26,7 +26,8 @@ class User < ApplicationRecord
   end
 
   def full_name
-    first_name + " " + last_name
+    #first_name + " " + last_name if not(first_name and last_name) : 'Mr.Incognito'
+    (first_name and last_name) ? first_name + " " + last_name : 'Mr.Incognito'
   end
 
   def admin?

@@ -1,17 +1,30 @@
-<h3> <%= t('.title') %> </h3>
+<div class="row justify-content-center mt-3">
+  <div class="col-auto">
 
-<p>
-  <%= @answer.question.body %>
-</p>
+    <div class="card">
+      <div class="card-header">
+        <%= t('.title') %>
+      </div>
 
-<p>
-  <b> <%= t('.answer') %> :</b>
-  <%= @answer.body %>
-</p>
+      <div class="card-body">
+        <div class="card-title">
+          <%= @answer.question.body %>
+        </div>
 
-<p>
-  <b> <%= t('.correct') %> :</b>
-  <%= @answer.correct %>
-</p>
+        <div class="card-text">
+          <ul>
+            <dt><%= t('.answer') %></dt>
+            <dd><%= @answer.body %></dd>
+          </ul>
 
-<%= render "shared/links" %>
+          <ul>
+            <dt><%= t('.correct') %></dt>
+            <dd><%= @answer.correct %></dd>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <%= render "shared/links" %>
+  </div>
+</div>

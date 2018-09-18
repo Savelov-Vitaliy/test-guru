@@ -1,15 +1,28 @@
-<h3><%= " \"#{@test_passage.test.title}\" #{t('.title')}" %></h3>
+<div class="row justify-content-center mt-3">
+  <div class="col-auto">
 
-<h2>
-  <%= t('.success') %>:
-  <big class="<%= @test_passage.passed? ? t('.passed') : t('.failed') %>">
-    <%= @test_passage.score.round 0 %>%
-  </big>
-  <br>
-  <br>
-  <%= @test_passage.passed? ? t('.test_passed') : t('.test_failed') %>
-</h2>
+  <div class="card">
+    <div class="card-header">
+      <%= t('.title', test_title: @test_passage.test.title) %>
+    </div>
 
-<br>
+    <% color = @test_passage.passed? ? "text-success" : "text-inverse" %>
+    <div class=card-text">
+      <div class="m-5 text-center">
+        <h2>
+          <p class="<%= color %>" >
+            <%= @test_passage.passed? ? t('.test_passed') : t('.test_failed') %>
+          </p>
 
-<%= render "shared/links" %>
+          <%= t('.success') %>:
+          <b class="<%= color %>">
+            <%= @test_passage.score.round 0 %>%
+          </b>
+        </h2>
+      </div>
+    </div>
+  </div>
+
+      <%= render "shared/links" %>
+  </div>
+</div>

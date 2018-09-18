@@ -29,7 +29,7 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-ru:
+en:
 
   helpers:
     select:
@@ -63,7 +63,7 @@ ru:
         delete: "delete"
         confirmation: "Delete this test?"
       edit:
-        title: "Editing Question"
+        title: "Edit Test"
       index:
         all_test_list: "All tests list"
         title: "Title"
@@ -96,7 +96,7 @@ ru:
         notice:  "Question \'%{question}\' was successfully updated."
       question_not_found: "Question was not found."
       show:
-        title: "Question Test  \'%{title}\'"
+        title: "Question Test  \'%{test_title}\'"
         answers: "Answers"
         new_answer: "New answer"
       question:
@@ -105,7 +105,7 @@ ru:
         delete: "delete"
         confirmation: "Delete this question?"
       form:
-        title: "Question \"%{question}\""
+        title: "Edit Question"
         body: "Question"
 
     answers:

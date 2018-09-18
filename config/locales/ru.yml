@@ -8,14 +8,8 @@ ru:
     messages:
       blank: "Поле %{field} не может быть пустым"
 
-  tests:
-    start:
-      notice: "Отвечай на вопросы, будь внимателен и удачи!"
-
   admin:
     tests:
-      index:
-        authorization_error_message: "У вас недостаточно прав для просмотра данной страницы"
       create:
         notice: "Тест \'%{test}\' был успешно создан."
       destroy:
@@ -32,8 +26,9 @@ ru:
         delete: "удалить"
         confirmation: "Удалить этот тест?"
       edit:
-        title: "Редактирование вопроса"
+        title: "Изменить Тест"
       index:
+        authorization_error_message: "У вас недостаточно прав для просмотра данной страницы"
         all_test_list: "Список всех тестов"
         title: "Название"
         level:  "Уровень"
@@ -65,7 +60,7 @@ ru:
         notice:  "Вопрос \'%{question}\' был успешно обновлен."
       question_not_found: "Вопрос не найден"
       show:
-        title: "Вопрос к тесту \'%{title}\'"
+        title: "Вопрос к тесту \'%{test_title}\'"
         answers: "Ответы"
         new_answer: "Новый ответ"
       question:
@@ -74,7 +69,7 @@ ru:
         delete: "удалить"
         confirmation: "Удалить этот вопрос?"
       form:
-        title: "Вопрос \"%{question}\""
+        title: "Изменить Вопрос"
         body: "Вопрос"
 
     answers:
@@ -90,7 +85,7 @@ ru:
         delete: "удалить"
         confirmation: "Удалить этот ответ?"
       edit:
-        title: "Редактирование ответа"
+        title: "Изменить Ответ"
       form:
         correct: "Верный"
         body: "Ответ"
@@ -111,13 +106,13 @@ ru:
 
   test_passages:
     show:
-      title: "Прохождение теста"
+      title: "Тест"
       question: "Вопрос"
       of: "из"
-      next: "Следующий"
+      next: "Далее"
     result:
-      title: "тест завершен"
-      success: "Результат"
+      title: "Тест \'%{test_title}\' завершен"
+      success: "Правильных ответов"
       passed: "успех"
       failed: "провал"
       test_failed: "Тест провален!"
@@ -126,3 +121,5 @@ ru:
   tests:
     test:
       start:  "старт"
+    start:
+      notice: "Отвечай на вопросы, будь внимателен и удачи!"
