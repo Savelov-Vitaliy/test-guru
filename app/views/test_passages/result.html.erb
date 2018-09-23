@@ -6,7 +6,7 @@
       <%= t('.title', test_title: @test_passage.test.title) %>
     </div>
 
-    <% color = @test_passage.passed? ? "text-success" : "text-inverse" %>
+    <% color = @test_passage.passed? ? "text-success" : "text-danger" %>
     <div class=card-text">
       <div class="m-5 text-center">
         <h2>

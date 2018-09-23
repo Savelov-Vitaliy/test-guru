@@ -42,6 +42,7 @@ en:
   tests:
     start:
       notice: "Answer the questions, be attentive and good luck!"
+      start:  "start"
 
   admin:
     tests:
@@ -135,6 +136,13 @@ en:
       admin_panel: "Admin Panel"
       exit_confirmation: "Exit?"
 
+    gists:
+      index:
+        title: "List all Gists"
+        question: "Question"
+        gist_url: "Gist URL"
+        user: "User"
+
   shared:
     links:
       all_tests: "All Tests"
@@ -153,7 +161,10 @@ en:
       failed: "failed"
       test_failed: "Test failed!"
       test_passed: "Test passed!"
+    gist:
+      success:  "Gist was successfully created"
+      failure:  "An error occured while saving gist"
 
-  tests:
-    test:
-      start:  "start"
+  services:
+    gist_question_service:
+       gist_description: "A question about \'%{test_title}\' from TestGuru"

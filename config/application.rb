@@ -22,5 +22,7 @@ module TestGuru
 
     config.encoding = 'UTF-8'
 
+    config.autoload_paths << "#{Rails.root}/lib/clients"
+
   end
 end

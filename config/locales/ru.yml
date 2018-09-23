@@ -89,6 +89,7 @@ ru:
       form:
         correct: "Верный"
         body: "Ответ"
+        submit: "Ответ"
       new:
         title: "Новый ответ"
       show:
@@ -98,6 +99,13 @@ ru:
     nav:
       admin_panel: "Панель администратора"
       exit_confirmation: "Выйти?"
+
+    gists:
+      index:
+        title: "Список всех Gists"
+        question: "Вопрос"
+        gist_url: "Ссылка на Gist"
+        user: "Пользователь"
 
   shared:
     links:
@@ -117,9 +125,16 @@ ru:
       failed: "провал"
       test_failed: "Тест провален!"
       test_passed: "Тест пройден!"
+    gist:
+      success:  "Gist успешно сохранен"
+      failure:  "Во время сохранения gist произошла ошибка"
 
   tests:
     test:
       start:  "старт"
     start:
       notice: "Отвечай на вопросы, будь внимателен и удачи!"
+
+  services:
+    gist_question_service:
+       gist_description: "Вопрос о \'%{test_title}\' от TestGuru"
