@@ -1,15 +1,35 @@
-<h3>'<%= t('.answers', title: @question.test.title) %>' </h3>
+<div class="row justify-content-center mt-3">
+  <div class="col-auto">
 
-<p>
-  <%= @question.body %>
-</p>
+    <div class="card">
+      <div class="card-header">
+        <%= t('.title', test_title: @question.test.title) %>
+      </div>
 
-<h3><%= t('.answers') %>:</h3>
+       <div class="card-body">
+        <div class="card-title">
+          <%= @question.body %>
+        </div>
 
-<ol>
-  <%= render @question.answers %>
-</ol>
+        <div class="card-text">
+          <h5><%= t('.answers') %></h5>
 
-<%= link_to t('.new_answer'), new_admin_question_answer_path(@question) %>.
+          <table class="table table-sm" >
+            <thead class="thead-light">
+              <tr>
+                <th scope="col">  # </th>
+                <th scope="col"> <%= t('.answer') %> </th>
+                <th scope="col" colspan=3> <%= t('.actions') %> </th>
+              </tr>
+            </thead>
 
-<%= render "shared/links" %>
+            <%= render @question.answers %>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <%= link_to t('.new_answer'), new_admin_question_answer_path(@question) %>.
+    <%= render "shared/links" %>
+  </div>
+</div>

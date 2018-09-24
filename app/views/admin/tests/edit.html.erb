@@ -1,5 +1,16 @@
-<h3> <%= "#{t('.title')} #{@test.id}" %> </h3>
+<div class="row justify-content-center mt-3">
+  <div class="col-auto">
 
-<%= render "form" %>
+    <div class="card">
+      <div class="card-header">
+        <%= t('.title') %>
+      </div>
 
-<%= render "shared/links" %>
+      <div class="card-body card-text">
+        <%= render "form" %>
+      </div>
+    </div>
+
+    <%= render "shared/links" %>
+  </div>
+</div>

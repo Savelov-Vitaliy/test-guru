@@ -69,3 +69,13 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Localization
 gem 'rails-i18n', '~> 5.0.0'
+
+# bootstrap
+gem 'jquery-rails'
+gem 'bootstrap'
+
+#gits GitHub
+#gem "github_api"
+#gem 'faraday'
+gem 'dotenv-rails', groups: [:development, :test]
+gem "octokit"

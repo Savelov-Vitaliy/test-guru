@@ -11,6 +11,7 @@ class User < ApplicationRecord
   has_many :test_passages
   has_many :tests, through: :test_passages
   has_many :author, class_name: 'Test', foreign_key: 'author_id'
+  # has_many :gists
 
   # validates :name, presence: true
   validates :email, presence: true,
@@ -26,7 +27,7 @@ class User < ApplicationRecord
   end
 
   def full_name
-    first_name + " " + last_name
+    [first_name, last_name].reject(&:blank?).join(' ').presence || 'Mr.Incognito'
   end
 
   def admin?

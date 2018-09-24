@@ -58,13 +58,13 @@ ru:
         first_name: "Имя"
         last_name: "Фамилия"
         password: "Пароль"
-        password_notice: "оставьте пустым, если не хотите его изменить" #leave blank if you don't want to change it
+        password_notice: "оставьте пустым, если не хотите его изменить"
         characters_minimum: "символов минимум"
         password_confirmation: "Пароль еще раз"
         current_password: "Теущий пароль"
-        urrent_password_notice: "Введите ваш текущий пароль для подтвержения изменений" #we need your current password to confirm your changes
+        urrent_password_notice: "Введите ваш текущий пароль для подтвержения изменений"
         submit: "Обновить"
-        cancel_account: "Удалить аккаунт" # "Cancel my account"
+        cancel_account: "Удалить аккаунт"
         confirm: "Удалить аккаунт?"
         back: "Назад?"
 
@@ -73,9 +73,10 @@ ru:
       signed_out: "Выход из системы выполнен."
       already_signed_out: "Выход из системы выполнен."
 
-      user: "Привет" # translation missing: ru.devise.sessions.user.Hi !
+      user:
+        greeting: "Привет %{user_name}"
       new:
-        title: "Войдите в ворота Гуру :)" # Enter the Guru Gates
+        title: "Вход "
         password: "Пароль"
         remember_me: "Запомнить"
         submit: "Вход"
@@ -96,3 +97,5 @@ ru:
         few: "%{resource}: сохранение не удалось из-за %{count} ошибок"
         many: "%{resource}: сохранение не удалось из-за %{count} ошибок"
         other: "%{resource}: сохранение не удалось из-за %{count} ошибки"
+
+

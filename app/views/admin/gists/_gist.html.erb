@@ -1,0 +1,5 @@
+<tr>
+  <td><%= link_to gist_name(gist), admin_question_path(gist.question) %></td>
+  <td><%= link_to gist_url(gist), target: "_blank" %></td>
+  <td><%= gist.user.email %></td>
+</tr>

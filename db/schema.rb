@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_11_131057) do
+ActiveRecord::Schema.define(version: 2018_09_20_173153) do
 
   create_table "answers", force: :cascade do |t|
     t.string "body", null: false
@@ -29,11 +29,21 @@ ActiveRecord::Schema.define(version: 2018_09_11_131057) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "gists", force: :cascade do |t|
+    t.integer "question_id"
+    t.integer "user_id"
+    t.string "github_url", null: false
+    t.index ["question_id"], name: "index_gists_on_question_id"
+    t.index ["user_id"], name: "index_gists_on_user_id"
+  end
+
   create_table "questions", force: :cascade do |t|
     t.string "body", null: false
     t.integer "test_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "gists_id"
+    t.index ["gists_id"], name: "index_questions_on_gists_id"
     t.index ["test_id"], name: "index_questions_on_test_id"
   end
 
@@ -82,8 +92,10 @@ ActiveRecord::Schema.define(version: 2018_09_11_131057) do
     t.string "type", default: "User", null: false
     t.string "first_name"
     t.string "last_name"
+    t.integer "gists_id"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["gists_id"], name: "index_users_on_gists_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 

@@ -1,22 +1,22 @@
-<%= form_with model: [:admin, @test], local: true do |form| %>
-  <%= render "shared/errors", resouse: @test %>
 
-  <p>
-    <%= form.label :title, t('.title')  %><br>
-    <%= form.text_field :title %>
-  </p>
 
-  <p>
-    <%= form.label :level, t('.level') %><br>
-    <%= form.text_field :level %>
-  </p>
+  <%= form_with model: [:admin, @test], local: true do |form| %>
+    <%= render "shared/errors", resouse: @test %>
 
-   <p>
-    <%= form.label :category_id, t('.category') %><br>
-    <%= form.collection_select :category_id, Category.all, :id, :title, prompt: true %>
-  </p>
+<div class="form-group mb-0">
 
-  <%= form.submit %>
-  <% end %>
+    <%= form.label :title, t('.title') %>
+    <%= form.text_field :title, class: "form-control mb-2" %>
 
-  <br>
+    <%= form.label :level, t('.level') %>
+    <%= form.text_field :level, class: "form-control mb-2" %>
+
+    <%= form.label :category_id, t('.category') %>
+    <%= form.collection_select :category_id, Category.all, :id, :title, {prompt: true}, {class: "form-control"} %>
+
+    <div class="text-right mt-3">
+      <%= form.submit class: "btn btn-primary" %>
+    </div>
+    <% end %>
+
+</div>
