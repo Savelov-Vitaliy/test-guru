@@ -23,7 +23,7 @@ class TestPassagesController < AuthenticatedController
     result_object = GistQuestionService.new(@test_passage.current_question).call
 
     flash_options = if result_object.success?
-      gist_new(result_object)
+      Gist.create(**gist_params, github_url: result.hmtl_url)
       { notice: (view_context.link_to t('.success'), result_object.html_url, target: "_blank") }
     else
       { alert: t('.failure') }
@@ -34,15 +34,10 @@ class TestPassagesController < AuthenticatedController
 
   private
 
-  def gist_new(result)
-    Gist.new(gist_params(result.html_url)).save
-  end
-
-  def gist_params(github_url)
+  def gist_params
     {
       question: @test_passage.current_question,
-      user: current_user,
-      github_url: github_url
+      user: current_user
     }
   end
 

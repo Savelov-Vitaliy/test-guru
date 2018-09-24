@@ -13,7 +13,7 @@ module ApplicationHelper
   end
 
   def gist_name(gist)
-    truncate(gist.question.body, :length => 25)
+    truncate(gist.question.body, length: 25)
   end
 
   def gist_url(gist)

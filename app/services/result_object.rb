@@ -7,7 +7,7 @@ class ResultObject
   end
 
   def success?
-    !@html_url.blank?
+    @html_url.present?
   end
 
 end
