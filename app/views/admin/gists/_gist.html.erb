@@ -1,5 +1,5 @@
 <tr>
-  <td><%= link_to gist.question.body.slice(0..24) + " ...", admin_question_path(gist.question) %></td>
-  <td><%= link_to gist.github_url.split('/')[-1], gist.github_url, target: "_blank" %></td>
+  <td><%= link_to gist_name(gist), admin_question_path(gist.question) %></td>
+  <td><%= link_to gist_url(gist), target: "_blank" %></td>
   <td><%= gist.user.email %></td>
 </tr>

@@ -1,7 +1,5 @@
 class TestPassagesController < AuthenticatedController
 
-  OCTOKIT_CLIENT = Octokit::Client.new(:access_token => ENV['ACCESS_TOKEN'] )
-
   before_action :set_test_passage, only: %i[show result update gist gist_params]
 
   def show
@@ -22,10 +20,11 @@ class TestPassagesController < AuthenticatedController
   end
 
   def gist
-    result = GistQuestionService.new(@test_passage.current_question, OCTOKIT_CLIENT).call
+    result_object = GistQuestionService.new(@test_passage.current_question).call
 
-    flash_options = if gist_new(result)
-      { notice: (view_context.link_to t('.success'), result.html_url, target: "_blank") }
+    flash_options = if result_object.success?
+      gist_new(result_object)
+      { notice: (view_context.link_to t('.success'), result_object.html_url, target: "_blank") }
     else
       { alert: t('.failure') }
     end
@@ -36,7 +35,7 @@ class TestPassagesController < AuthenticatedController
   private
 
   def gist_new(result)
-    Gist.new(gist_params(result.html_url)).save if result.respond_to?(:html_url)
+    Gist.new(gist_params(result.html_url)).save
   end
 
   def gist_params(github_url)
