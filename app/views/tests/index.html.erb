@@ -6,7 +6,11 @@
     <table class="table table-sm" >
       <thead class="thead-light">
       	<tr>
-      		<th scope="col">Title</th>
+      		<th scope="col" class='sort-by-title pointer'>
+            Title
+            <%= octicon 'arrow-up', class: 'text-success hide' %>
+            <%= octicon 'arrow-down', class: 'text-success hide' %>
+          </th>
       		<th scope="col">Level</th>
       		<th scope="col">Category</th>
       		<th scope="col">Author</th>
