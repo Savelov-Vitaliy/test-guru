@@ -23,7 +23,7 @@ class TestPassagesController < AuthenticatedController
     result_object = GistQuestionService.new(@test_passage.current_question).call
 
     flash_options = if result_object.success?
-      Gist.create(**gist_params, github_url: result.hmtl_url)
+      Gist.create(**gist_params, github_url: result_object.html_url)
       { notice: (view_context.link_to t('.success'), result_object.html_url, target: "_blank") }
     else
       { alert: t('.failure') }
