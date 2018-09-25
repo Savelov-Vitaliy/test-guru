@@ -11,6 +11,10 @@ class GistQuestionService
     ResultObject.new(result)
   end
 
+  def destroy(gist_id)
+    @client.delete_gist(gist_id)
+  end
+
   private
 
   def gist_params
