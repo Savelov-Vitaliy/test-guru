@@ -79,3 +79,6 @@ gem 'bootstrap'
 #gem 'faraday'
 gem 'dotenv-rails', groups: [:development, :test]
 gem "octokit"
+
+# UI
+gem 'octicons_helper'
