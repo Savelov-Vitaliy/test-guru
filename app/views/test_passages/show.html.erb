@@ -14,6 +14,10 @@
             <small class="pull-right text-muted">
               <%= "#{t('.question')} #{@test_passage.question_number} #{t('.of')} #{@test_passage.questions_count}" %>
             </small>
+            <!--
+                А вообще, проще сделать вот так:
+                <progress max="<%= @test_passage.questions_count %>" value="<%= @test_passage.question_number %>"></progress>
+            -->
           </div>
         </div>
 

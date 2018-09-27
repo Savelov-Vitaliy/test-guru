@@ -6,7 +6,7 @@ ru:
 
   errors:
     messages:
-      blank: "Поле %{field} не может быть пустым"
+      blank: "Поле не может быть пустым"
 
   admin:
     tests:
@@ -21,6 +21,11 @@ ru:
         level:  "Уровень"
         category: "Категория"
       test:
+        show: "показать"
+        edit: "изменить"
+        delete: "удалить"
+        confirmation: "Удалить этот тест?"
+      test_edit:
         show: "показать"
         edit: "изменить"
         delete: "удалить"

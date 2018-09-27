@@ -37,7 +37,7 @@ en:
 
   errors:
     messages:
-      blank: "Field %{field} can not be empty"
+      blank: "Field can not be empty"
 
   tests:
     start:
