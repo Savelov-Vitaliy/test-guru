@@ -83,3 +83,4 @@ gem "octokit"
 
 # UI
 gem 'octicons_helper'
+gem 'rake'

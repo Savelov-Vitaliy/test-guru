@@ -43,6 +43,8 @@ en:
     start:
       notice: "Answer the questions, be attentive and good luck!"
       start:  "start"
+    test:
+      start:  "start"
 
   mailers:
     feedback_mailer:
