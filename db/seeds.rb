@@ -9,8 +9,8 @@
 
 user = User.create! (
     [
-      { name: "guest", email: "savelov_vitaliy@mail.ru", password: "guest!", first_name: "Garry", last_name: "Guest" },
-      { name: "admin", email: "savelowitaliy@gmail.com", password: "admin!", first_name: "Arnold", last_name: "Admin", type: "Admin"  }
+      { name: "guest", email: "guest@gmail.com", password: "guest!", first_name: "Garry", last_name: "Guest" },
+      { name: "admin", email: "admin@gmail.com", password: "admin!", first_name: "Arnold", last_name: "Admin", type: "Admin"  }
     ]
   )
 
