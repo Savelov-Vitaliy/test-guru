@@ -78,7 +78,7 @@ gem 'bootstrap'
 #gits GitHub
 #gem "github_api"
 #gem 'faraday'
-gem 'dotenv-rails', groups: [:development, :test]
+gem 'dotenv-rails'#, groups: [:development, :test]
 gem "octokit"
 
 # UI
