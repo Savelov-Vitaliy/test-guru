@@ -44,6 +44,17 @@ en:
       notice: "Answer the questions, be attentive and good luck!"
       start:  "start"
 
+  mailers:
+    feedback_mailer:
+      feedback_mail_title: "User %{user_name} send message:"
+
+  feedback:
+    new:
+      title: "Feedback form"
+      subject: "Subject:"
+      message: "Message:"
+      submit_btn: "Send"
+
   admin:
     tests:
       index:
@@ -147,6 +158,14 @@ en:
     links:
       all_tests: "All Tests"
       back: "Back"
+    nav:
+      feedback: "Feedback"
+      admin_panel: "Admin Panel"
+      exit: "Exit"
+      exit_confirm: "Exit?"
+      log_in: "Log In"
+      sign_up: "Sign Up"
+      welcome: "Welcome, <b>%{user}</b> Guru ."
 
   test_passages:
     show:

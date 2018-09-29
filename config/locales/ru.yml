@@ -8,6 +8,19 @@ ru:
     messages:
       blank: "Поле не может быть пустым"
 
+  mailers:
+    feedback_mailer:
+      feedback_mail_title: "Пользователь %{user_name} отправил сообщение:"
+      success: "Cообщение было успешно отправлено"
+      failure: "При отправке сообщения возникли ошибки"
+
+  feedback:
+    new:
+      title: "Форма обратной связи"
+      subject: "Тема:"
+      message: "Сообщение:"
+      submit_btn: "Отправить"
+
   admin:
     tests:
       create:
@@ -116,6 +129,14 @@ ru:
     links:
       all_tests: "Все тесты"
       back: "Назад"
+    nav:
+      feedback: "Обратная связь"
+      admin_panel: "Панель Администратора"
+      exit: "Выход"
+      exit_confirm: "Выйти?"
+      log_in: "Вход"
+      sign_up: "Регистрация"
+      welcome: "Привет <b>%{user}</b> Гуру . "
 
   test_passages:
     show:

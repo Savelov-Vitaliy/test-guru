@@ -10,7 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_20_173153) do
+ActiveRecord::Schema.define(version: 2018_09_27_162319) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "answers", force: :cascade do |t|
     t.string "body", null: false
@@ -69,6 +72,7 @@ ActiveRecord::Schema.define(version: 2018_09_20_173153) do
     t.index ["author_id"], name: "index_tests_on_author_id"
     t.index ["category_id"], name: "index_tests_on_category_id"
     t.index ["level", "title"], name: "index_tests_on_level_and_title"
+    t.index ["level"], name: "index_tests_on_level"
   end
 
   create_table "users", force: :cascade do |t|
