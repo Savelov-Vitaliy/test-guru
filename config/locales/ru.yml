@@ -38,6 +38,7 @@ ru:
         edit: "изменить"
         delete: "удалить"
         confirmation: "Удалить этот тест?"
+        cancel: "отменить"
       test_edit:
         show: "показать"
         edit: "изменить"
@@ -66,6 +67,7 @@ ru:
         id: "id"
         body: "Вопрос"
         create_new_question: "Создать новый вопрос"
+        authorization_error_message: "При авторизации возникла ошибка"
       new:
         title: "Созадать новый тест"
 
@@ -124,6 +126,7 @@ ru:
         question: "Вопрос"
         gist_url: "Ссылка на Gist"
         user: "Пользователь"
+        actions: "Действия"
 
   shared:
     links:
@@ -160,6 +163,11 @@ ru:
       start:  "старт"
     start:
       notice: "Отвечай на вопросы, будь внимателен и удачи!"
+    level:
+      easy: "легкий"
+      elemetary: "элементарный"
+      advanced: "продвинутый"
+      hard: "сложный"
 
   services:
     gist_question_service:

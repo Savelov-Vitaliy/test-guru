@@ -1,4 +1,4 @@
- <% if request.path.include?('admin')
+ <% if admin_section?
       navbar_bg = "bg-info"
       admin_panel = t(".admin_panel")
     else
@@ -6,28 +6,32 @@
       admin_panel_link = link_to t(".admin_panel") + " . ", admin_tests_path
     end %>
 
-<nav class="navbar navbar-lught <%= navbar_bg %>" >
-  <div class="text-dark navbar-brand" >
+<nav class="navbar navbar-lught <%= navbar_bg %> " >
+  <div class="text-dark navbar-brand " >
     <%= link_to "TestGuru", root_path %>
     <%= admin_panel %>
   </div>
-
-  <span class="navbar-text">
+  <div class="navbar-text  ">
 
     <% if user_signed_in? %>
 
-      <%= t(".welcome", user: current_user.full_name).html_safe %>
-      <%= admin_panel_link if current_user.admin? %>
-      <%= link_to t(".feedback"), new_feedback_path %> .
-      <%= link_to t(".exit"),
-                  destroy_user_session_path,
-                  method: :delete,
-                  data: { confirm: t(".exit_confirm")} %>
+      <div class="col-12 col-md-auto">
+        <%= t(".welcome", user: current_user.full_name).html_safe %>
+      </div>
+      <div class="col-12 col-md-auto">
+        <%= admin_panel_link if current_user.admin? %>
+        <%= link_to t(".feedback"), new_feedback_path %> .
+        <%= link_to t(".exit"),
+                    destroy_user_session_path,
+                    method: :delete,
+                    data: { confirm: t(".exit_confirm")} %>
+      </div>
     <% else %>
         <%= link_to t(".log_in"), new_session_path(resource_name) %> |
         <%= link_to t(".sign_up"), new_registration_path(resource_name) %>
     <% end %>
 
-  </span>
+  </div>
 
  </nav>
+

@@ -1,10 +1,13 @@
 class FeedbackMailer < ApplicationMailer
+  default to: -> { Admin.pluck(:email) },
+        from: 'notification@testguru.com'
 
   before_action :set_current_user
 
-  def feedback(admin_email, feedback_params)
-    @feedback_params = feedback_params
-    mail to: admin_email, subject: I18n.t('mailers.feedback_mailer.feedback_mail_title', user_name: @current_user.full_name)
+  def feedback(feedback_params)
+    @subject = feedback_params[:subject]
+    @message = feedback_params[:message]
+    mail subject: I18n.t('mailers.feedback_mailer.feedback_mail_title', user_name: @current_user.full_name)
   end
 
   private

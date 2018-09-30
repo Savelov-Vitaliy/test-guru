@@ -45,6 +45,11 @@ en:
       start:  "start"
     test:
       start:  "start"
+    level:
+      easy: "easy"
+      elemetary: "elemetary"
+      advanced: "advanced"
+      hard: "hard"
 
   mailers:
     feedback_mailer:
@@ -98,6 +103,7 @@ en:
         id: "id"
         body: "Question"
         create_new_question: "Create new question"
+        authorization_error_message: "Authorization error"
       new:
         title: "Create new test"
 
@@ -155,6 +161,7 @@ en:
         question: "Question"
         gist_url: "Gist URL"
         user: "User"
+        actions: "Actions"
 
   shared:
     links:
