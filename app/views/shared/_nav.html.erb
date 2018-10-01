@@ -20,11 +20,15 @@
   <div class="text-dark navbar-brand " >
     <%= link_to "TestGuru", root_path %>
     <%= admin_panel %>
+<!--
+       <a href="/gurus/login?lang=en"><img src="assets/images/icons/en.png"></a>
+        <%= link_to image_tag(icon_flag, size: "10x10", alt: t("language")), locale_link %>
+ -->
 
-      <%= link_to image_tag(icon_flag, size: "10x10", alt: t("language")), locale_link %>
-    <!--
-      <a href="/gurus/login?lang=en"><img alt="English" src="/icons/en.png" width="10" height="10" /></a>
-    -->
+
+
+       [<%= link_to t("in_language"), locale_link %>]
+
 
 
   </div>

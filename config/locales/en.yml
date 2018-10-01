@@ -32,6 +32,7 @@
 en:
 
   language: "Русский"
+  in_language: "на русском"
 
   helpers:
     select:
