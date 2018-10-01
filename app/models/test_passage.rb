@@ -1,7 +1,7 @@
 class TestPassage < ApplicationRecord
   belongs_to :user
   belongs_to :test
-  belongs_to :current_question, class_name: "Question", optional: true
+  belongs_to :current_question, class_name: "Question", optional: true, dependent: :destroy
 
   before_save :before_save_set_current_question
 
