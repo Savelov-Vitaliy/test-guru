@@ -4,9 +4,9 @@ class FeedbackMailer < ApplicationMailer
 
   before_action :set_current_user
 
-  def feedback(feedback_params)
-    @subject = feedback_params[:subject]
-    @message = feedback_params[:message]
+  def feedback(subject:, message:)
+    @subject = subject
+    @message = message
     mail subject: I18n.t('mailers.feedback_mailer.feedback_mail_title', user_name: @current_user.full_name)
   end
 

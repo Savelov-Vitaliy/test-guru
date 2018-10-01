@@ -16,6 +16,7 @@ class FeedbackController < ApplicationController
 
   def feedback_params
     params.permit(:subject, :message)
+    { subject: params[:subject], message: params[:message] }
   end
 
 end
