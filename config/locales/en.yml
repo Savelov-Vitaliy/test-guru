@@ -31,6 +31,8 @@
 
 en:
 
+  language: "Русский"
+
   helpers:
     select:
       prompt: "- select -"

@@ -20,4 +20,8 @@ module ApplicationHelper
     gist.github_url.split('/')[-1]
   end
 
+  def what_locale?
+    I18n.locale == :ru
+  end
+
 end

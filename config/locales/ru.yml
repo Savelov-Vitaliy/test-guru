@@ -1,5 +1,7 @@
 ru:
 
+  language: "English"
+
   helpers:
     select:
       prompt: "- выберите из списка -"

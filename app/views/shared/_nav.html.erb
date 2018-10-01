@@ -4,12 +4,29 @@
     else
       navbar_bg = "bg-light"
       admin_panel_link = link_to t(".admin_panel") + " . ", admin_tests_path
-    end %>
+    end
+
+    if what_locale?
+      icon_flag = "/icons/en.png"
+      #icon_flag = "en.pg"
+      locale_link = "#{request.path}?lang=en"
+    else
+      icon_flag = "/icons/ru.png"
+      locale_link = request.path
+    end
+  %>
 
 <nav class="navbar navbar-lught <%= navbar_bg %> " >
   <div class="text-dark navbar-brand " >
     <%= link_to "TestGuru", root_path %>
     <%= admin_panel %>
+
+      <%= link_to image_tag(icon_flag, size: "10x10", alt: t("language")), locale_link %>
+    <!--
+      <a href="/gurus/login?lang=en"><img alt="English" src="/icons/en.png" width="10" height="10" /></a>
+    -->
+
+
   </div>
   <div class="navbar-text  ">
 
