@@ -1,0 +1,29 @@
+<div class="row justify-content-center mt-3">
+  <div class="col-auto">
+    <div class="card">
+      <div class="card-header">
+        <%= t('.title') %>
+      </div>
+
+
+      <%= form_with url: feedback_index_path, method: :post do |form| %>
+        <div class="card-body">
+          <div class="card-title">
+            <%= form.label :subject, t('.subject') %><br>
+            <%= form.text_field :subject, class: "form-control" %>
+          </div>
+          <div class="card-text">
+            <%= form.label :message, t('.message') %><br>
+            <%= form.text_area :message, class: "form-control", size: "30x5" %>
+
+            <div class="text-right mt-3">
+              <%= form.submit t('.submit_btn'), class: "btn btn-primary" %>
+            </div>
+
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <%= render "shared/links" %>
+  </div>
+</div>

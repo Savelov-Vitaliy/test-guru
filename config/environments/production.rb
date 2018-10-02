@@ -20,11 +20,12 @@ Rails.application.configure do
 
   # Disable serving static files from the `/public` folder by default since
   # Apache or NGINX already handles this.
-  config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
+  # config.public_file_server.enabled = true
+  config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present? # true
 
   # Compress JavaScripts and CSS.
   config.assets.js_compressor = :uglifier
-  # config.assets.css_compressor = :sass
+  # config.assets.css_compressor = :yui #:sass
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
   config.assets.compile = false
@@ -64,6 +65,15 @@ Rails.application.configure do
   # config.active_job.queue_name_prefix = "test-guru_#{Rails.env}"
 
   config.action_mailer.perform_caching = false
+  config.action_mailer.default_url_options = {host: 'test-guru-savelov.herokuapp.com'}
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address:              'smtp.gmail.com',
+    port:                 587,
+    user_name:            ENV["SMTP_USERNAME"],
+    password:             ENV["SMTP_PASSWORD"],
+    authentication:       'plain',
+    enable_starttls_auto: true  }
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
@@ -91,4 +101,10 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  # my
+  # config.assets.digest = true
+  # config.assets.prefix = "/assets"
+   config.assets.compile = true
+
 end

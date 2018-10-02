@@ -1,13 +1,15 @@
 document.addEventListener('turbolinks:load', function(){
 
-  var container = document.getElementsByTagName('small')[0];
-  var progress_bar = document.createElement('progress');
+  var container = document.getElementById("progress-bar");
 
-  var progress = container.textContent.match(/\d/g);
+  if (container) {
+    var progress_bar = document.createElement('progress');
+    var progress = container.textContent.match(/\d/g);
 
-  progress_bar.setAttribute('max', progress[1]);
-  progress_bar.setAttribute('value', progress[0]);
+    progress_bar.setAttribute('max', progress[1]);
+    progress_bar.setAttribute('value', progress[0]);
 
-  container.appendChild(progress_bar);
+    container.appendChild(progress_bar);
+  }
 
 })

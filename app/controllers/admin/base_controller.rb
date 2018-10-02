@@ -5,6 +5,10 @@ class Admin::BaseController < ApplicationController
   before_action :authenticate_user!
   before_action :admin_required!
 
+  def admin_section?
+    true
+  end
+
   private
 
   def admin_required!

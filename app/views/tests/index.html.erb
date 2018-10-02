@@ -1,21 +1,21 @@
 <div class="row justify-content-center mt-3">
-  <div class="col-auto">
+  <div class="col-12">
 
-    <h3>All Tests list</h3>
+    <h3><%= t('admin.tests.index.all_test_list') %></h3>
 
     <table class="table table-sm" >
       <thead class="thead-light">
       	<tr>
       		<th scope="col" class='sort-by-title pointer'>
-            Title
+            <%= t('admin.tests.index.title') %>
             <%= octicon 'arrow-up', class: 'text-success hide' %>
             <%= octicon 'arrow-down', class: 'text-success hide' %>
           </th>
-      		<th scope="col">Level</th>
-      		<th scope="col">Category</th>
-      		<th scope="col">Author</th>
-      		<th scope="col">Questions</th>
-      		<th scope="col">Actions</th>
+      		<th scope="col"><%= t('admin.tests.index.level') %></th>
+      		<th scope="col"><%= t('admin.tests.index.category') %></th>
+      		<th scope="col"><%= t('admin.tests.index.author') %></th>
+      		<th scope="col"><%= t('admin.tests.index.questions') %></th>
+      		<th scope="col"><%= t('admin.tests.index.actions') %></th>
       	</tr>
       </thead>
 

@@ -1,5 +1,8 @@
 ru:
 
+  language: "English"
+  in_language: "[in English]"
+
   helpers:
     select:
       prompt: "- выберите из списка -"
@@ -7,6 +10,19 @@ ru:
   errors:
     messages:
       blank: "Поле не может быть пустым"
+
+  mailers:
+    feedback_mailer:
+      feedback_mail_title: "Пользователь %{user_name} отправил сообщение:"
+      success: "Cообщение было успешно отправлено"
+      failure: "При отправке сообщения возникли ошибки"
+
+  feedback:
+    new:
+      title: "Форма обратной связи"
+      subject: "Тема:"
+      message: "Сообщение:"
+      submit_btn: "Отправить"
 
   admin:
     tests:
@@ -25,6 +41,7 @@ ru:
         edit: "изменить"
         delete: "удалить"
         confirmation: "Удалить этот тест?"
+        cancel: "отменить"
       test_edit:
         show: "показать"
         edit: "изменить"
@@ -53,6 +70,7 @@ ru:
         id: "id"
         body: "Вопрос"
         create_new_question: "Создать новый вопрос"
+        authorization_error_message: "При авторизации возникла ошибка"
       new:
         title: "Созадать новый тест"
 
@@ -111,11 +129,20 @@ ru:
         question: "Вопрос"
         gist_url: "Ссылка на Gist"
         user: "Пользователь"
+        actions: "Действия"
 
   shared:
     links:
       all_tests: "Все тесты"
       back: "Назад"
+    nav:
+      feedback: "Обратная связь"
+      admin_panel: "Панель Администратора"
+      exit: "Выход"
+      exit_confirm: "Выйти?"
+      log_in: "Вход"
+      sign_up: "Регистрация"
+      welcome: "Привет <b>%{user}</b> Гуру . "
 
   test_passages:
     show:
@@ -139,6 +166,11 @@ ru:
       start:  "старт"
     start:
       notice: "Отвечай на вопросы, будь внимателен и удачи!"
+    level:
+      easy: "легкий"
+      elemetary: "элементарный"
+      advanced: "продвинутый"
+      hard: "сложный"
 
   services:
     gist_question_service:

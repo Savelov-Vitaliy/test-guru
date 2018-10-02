@@ -11,7 +11,7 @@
           <b><%= @test_passage.current_question.body %></b>
           <br>
           <div class="text-right">
-            <small class="pull-right text-muted">
+            <small id="progress-bar">
               <%= "#{t('.question')} #{@test_passage.question_number} #{t('.of')} #{@test_passage.questions_count}" %>
             </small>
             <!--

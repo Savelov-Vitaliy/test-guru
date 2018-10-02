@@ -80,6 +80,10 @@ ru:
         password: "Пароль"
         remember_me: "Запомнить"
         submit: "Вход"
+    shared:
+      links:
+        forgot_password: "Забыли пароль?" #"Forgot your password?"
+        confirmation_instructions: "Не получили подтверждения?" #"Didn't receive confirmation instructions?"
 
     unlocks:
       send_instructions: "В течение нескольких минут вы получите письмо с инструкциями по разблокировке вашей учётной записи."

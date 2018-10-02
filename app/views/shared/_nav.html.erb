@@ -1,25 +1,49 @@
-<nav class="navbar navbar-lught bg-light">
-  <%= link_to "TestGuru", root_path, class: "text-dark navbar-brand" %>
+ <% if admin_section?
+      navbar_bg = "bg-info"
+      admin_panel = t(".admin_panel")
+    else
+      navbar_bg = "bg-light"
+      admin_panel_link = link_to t(".admin_panel") + " . ", admin_tests_path
+    end
 
-  <span class="navbar-text">
+    if what_locale?
+      icon_flag = "icons/en.png"
+      locale_link = "#{request.path}?lang=en"
+    else
+      icon_flag = "icons/ru.png"
+      locale_link = request.path
+    end
+  %>
+
+<nav class="navbar navbar-lught <%= navbar_bg %> " >
+  <div class="text-dark navbar-brand " >
+    <%= link_to image_tag(icon_flag, size: "20x20", alt: t("in_language")), locale_link %>
+    <%= link_to "TestGuru", root_path %>
+    <%= admin_panel %>
+  </div>
+  <div class="navbar-text  ">
 
     <% if user_signed_in? %>
 
-      Welcome, <b><%= current_user.full_name %></b> Guru |
-
-      <% if current_user.admin? %>
-        <%= link_to "Admin Panel", admin_tests_path %> |
-      <% end %>
-
-      <%= link_to "Exit",
-                  destroy_user_session_path,
-                  method: :delete,
-                  data: { confirm: "Exit?"} %>
+      <div class="col-12 col-md-auto">
+        <%= t(".welcome", user: current_user.full_name).html_safe %>
+      </div>
+      <div class="col-12 col-md-auto">
+        <%= admin_panel_link if current_user.admin? %>
+        <%= link_to t(".feedback"), new_feedback_path %> .
+        <%= link_to t(".exit"),
+                    destroy_user_session_path,
+                    method: :delete,
+                    data: { confirm: t(".exit_confirm")} %>
+      </div>
     <% else %>
-        <%= link_to "Log in", new_session_path(resource_name) %> |
-        <%= link_to "Sign up", new_registration_path(resource_name) %>
+        <%= link_to t(".log_in"), new_session_path(resource_name) %> |
+        <%= link_to t(".sign_up"), new_registration_path(resource_name) %>
     <% end %>
 
-  </span>
+
+
+  </div>
 
  </nav>
+
