@@ -105,6 +105,6 @@ Rails.application.configure do
   # my
   # config.assets.digest = true
   # config.assets.prefix = "/assets"
-  # config.assets.compile = true
+   config.assets.compile = true
 
 end
