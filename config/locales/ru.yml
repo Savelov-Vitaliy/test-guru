@@ -1,7 +1,7 @@
 ru:
 
   language: "English"
-  in_language: "in English"
+  in_language: "[in English]"
 
   helpers:
     select:

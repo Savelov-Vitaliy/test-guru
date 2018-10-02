@@ -7,30 +7,19 @@
     end
 
     if what_locale?
-      icon_flag = "/icons/en.png"
-      #icon_flag = "en.pg"
+      icon_flag = "icons/en.png"
       locale_link = "#{request.path}?lang=en"
     else
-      icon_flag = "/icons/ru.png"
+      icon_flag = "icons/ru.png"
       locale_link = request.path
     end
   %>
 
 <nav class="navbar navbar-lught <%= navbar_bg %> " >
   <div class="text-dark navbar-brand " >
+    <%= link_to image_tag(icon_flag, size: "20x20", alt: t("in_language")), locale_link %>
     <%= link_to "TestGuru", root_path %>
     <%= admin_panel %>
-<!--
-       <a href="/gurus/login?lang=en"><img src="assets/images/icons/en.png"></a>
-        <%= link_to image_tag(icon_flag, size: "10x10", alt: t("language")), locale_link %>
- -->
-
-
-
-       [<%= link_to t("in_language"), locale_link %>]
-
-
-
   </div>
   <div class="navbar-text  ">
 
@@ -51,6 +40,8 @@
         <%= link_to t(".log_in"), new_session_path(resource_name) %> |
         <%= link_to t(".sign_up"), new_registration_path(resource_name) %>
     <% end %>
+
+
 
   </div>
 
