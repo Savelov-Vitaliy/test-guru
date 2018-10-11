@@ -11,6 +11,8 @@ class User < ApplicationRecord
   has_many :test_passages
   has_many :tests, through: :test_passages
   has_many :author, class_name: 'Test', foreign_key: 'author_id'
+  has_many :rewards
+  has_many :badges, through: :rewards
   # has_many :gists
 
   # validates :name, presence: true

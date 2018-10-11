@@ -1,5 +1,5 @@
-    <%= link_to "Gists .", admin_gists_path if request.path.include?('admin') %>
-    <%= link_to t('.all_tests'), tests_path %> .
-    <% unless request.path.include?('result') %>
-      <a href="" onclick="javascript:history.back(); return false;"><%= t('.back') %></a>
-    <% end %>
+
+  <%= link_to t('.all_tests'), request.path.include?('admin') ? admin_tests_path : tests_path %> .
+  <% unless request.path.include?('result') %>
+    <a href="" onclick="javascript:history.back(); return false;"><%= t('.back') %></a>
+  <% end %>

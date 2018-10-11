@@ -1,0 +1,18 @@
+
+
+  <% if description %>
+  <li class="list-group-item">
+    <details>
+      <summary>  <%= show_badge(badge).html_safe %></summary>
+        <p><small class="blockquote-footer">
+          <%= t("admin.badges.form.#{badge.rule}") %> <%= badge.param %>
+        </small></p>
+    </details>
+  </li>
+  <% else %>
+    <%= show_badge(badge).html_safe %>
+    <span class="badge badge-light"><%= count[badge.id] %></span>
+    <br>
+  <% end %>
+
+

@@ -1,0 +1,41 @@
+<%= form_with model: [:admin, @badge], local: true  do |form| %>
+  <%= render "shared/errors", resource: @badge %>
+
+  <div class="form-group mb-0">
+    <%= form.label :title, t('.title') %>
+    <%= form.text_field :title, class: "form-control"  %>
+
+    <%= form.label :color, t('.color') %>
+    <%= form.select  :color,
+                     @badge.class::COLORS.map{ |c|
+                        ["", c, {style: "background-color: #{c};"}] }, #t(".#{c}")
+                     {prompt: true},
+                     {class: "form-control"} %>
+
+    <%= form.label :rule, t('.rule') %>
+    <%= form.select :rule,
+                    @badge.class::RULES.map{ |r| [t(".#{r}"), r] },
+                    {prompt: true},
+                    {class: "form-control"} %>
+
+    <div id='category' class="hide">
+      <%= form.label :param, t('.category') %>
+      <%= form.collection_select  :param,
+                                  Category.all,
+                                  :title,
+                                  :title,
+                                  {prompt: true},
+                                  {class: "form-control", disabled: true } %>
+    </div>
+
+    <div id='level' class="hide">
+      <%= form.label :param, t('.level') %>
+      <%= form.text_field :param, class: "form-control", disabled: true, type: :number, value: @badge.param %>
+    </div>
+
+    <div class="text-right mt-3">
+      <%= form.submit class: "btn btn-primary"  %>
+    </div>
+  </div>
+
+<% end %>

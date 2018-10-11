@@ -6,6 +6,10 @@ class TestPassagesController < AuthenticatedController
   end
 
   def result
+    test = @test_passage.test
+    tests_passages = TestPassage.where(user_id: @test_passage.user.id).map {|tp| tp}
+    passed_tests = TestPassage.where(user_id: @test_passage.user.id).map {|tp| tp.test if tp.passed?}
+    Badge.all.each { |badge| add_badge(badge) if badge.reward? test, passed_tests, tests_passages } if @test_passage.passed?
   end
 
   def update
@@ -43,5 +47,11 @@ class TestPassagesController < AuthenticatedController
 
   def set_test_passage
     @test_passage = TestPassage.find(params[:id])
+  end
+
+  def add_badge(badge)
+    current_user.badges << badge
+    flash.notice ||= I18n.t(".your_new_achievements")
+    flash.notice += helpers.show_badge(badge)
   end
 end

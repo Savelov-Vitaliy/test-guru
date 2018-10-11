@@ -1,28 +1,27 @@
 <div class="row justify-content-center mt-3">
   <div class="col-auto">
 
-  <div class="card">
-    <div class="card-header">
-      <%= t('.title', test_title: @test_passage.test.title) %>
-    </div>
+    <div class="card">
+      <div class="card-header">
+        <%= t('.title', test_title: @test_passage.test.title) %>
+      </div>
 
-    <% color = @test_passage.passed? ? "text-success" : "text-danger" %>
-    <div class=card-text">
-      <div class="m-5 text-center">
-        <h2>
-          <p class="<%= color %>" >
-            <%= @test_passage.passed? ? t('.test_passed') : t('.test_failed') %>
-          </p>
+      <% color = @test_passage.passed? ? "text-success" : "text-danger" %>
+      <div class=card-text">
+        <div class="m-5 text-center">
+          <h2>
+            <p class="<%= color %>" >
+              <%= @test_passage.passed? ? t('.test_passed') : t('.test_failed') %>
+            </p>
 
-          <%= t('.success') %>:
-          <b class="<%= color %>">
-            <%= @test_passage.score.round 0 %>%
-          </b>
-        </h2>
+            <%= t('.success') %>:
+            <b class="<%= color %>">
+              <%= @test_passage.score.round 0 %>%
+            </b>
+          </h2>
+        </div>
       </div>
     </div>
-  </div>
 
-    <%= render "shared/links" %>
   </div>
 </div>

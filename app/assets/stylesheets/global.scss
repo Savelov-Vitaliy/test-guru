@@ -5,3 +5,8 @@
 .hide {
   display: none;
 }
+
+label input[type=checkbox] {
+  margin-top: 0.5em;
+  margin-bottom: 0;
+}
