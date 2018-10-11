@@ -32,26 +32,18 @@
       </div>
       <div class="col-12 col-md-auto">
 
-        <%= link_to t(".admin_panel"), admin_tests_path if
-            current_user.admin? %>
-
-        <!--
-        <%= link_to t('.create_new_test'), new_admin_test_path if
-            request.path == '/admin/tests' %>
-        -->
+        <%= link_to t(".admin_panel"), admin_tests_path if !admin_section? %>
 
         <%= link_to t('.gist_question'), gist_test_passage_path(@test_passage), method: :post if
             request.path.include?('test_passages') and !request.path.include?('result') %>
 
-        <%= link_to t('.all_tests'), request.path.include?('admin') ? admin_tests_path : tests_path %>
+        <%= link_to t('.all_tests'), admin_section? ? admin_tests_path : tests_path %>
 
-        <%= link_to "Gists"  + " . ", admin_gists_path if
-            request.path.include?('admin') %>
+        <%= link_to "Gists . ", admin_gists_path if admin_section? %>
 
         <%= link_to t(".badges"), my_badges_path %>
 
-        <%= link_to t(".feedback"), new_feedback_path if
-            !request.path.include?('admin') %>
+        <%= link_to t(".feedback"), new_feedback_path if !admin_section? %>
 
         <% unless request.path.include?('result') %>
           <a href="" onclick="javascript:history.back(); return false;"><%= t('.back') %></a>

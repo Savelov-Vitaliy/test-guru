@@ -23,4 +23,8 @@ class ApplicationController < ActionController::Base
     I18n.locale = I18n.locale_available?(params[:lang]) ? params[:lang] : I18n.default_locale
   end
 
+  def log(mes)
+    logger.debug ActiveSupport::LogSubscriber.new.send(:color, mes, :red)
+  end
+
 end

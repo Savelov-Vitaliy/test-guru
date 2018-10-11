@@ -28,13 +28,7 @@ class Badge < ApplicationRecord
   end
 
   def on_first_try(*param)
-    @tests_passages.count(@test) == 1 ? true : false
-  end
-
-  private
-
-  def log(mes)
-    logger.debug ActiveSupport::LogSubscriber.new.send(:color, mes, :red)
+    @tests_passages.count(@test) == 1 #? true : false
   end
 
 end

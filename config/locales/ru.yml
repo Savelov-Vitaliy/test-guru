@@ -38,6 +38,7 @@ ru:
         title:  "Название"
         level:  "Уровень"
         category: "Категория"
+        timer: "Таймер"
       test:
         show: "показать"
         edit: "изменить"
@@ -61,6 +62,7 @@ ru:
         questions: "Вопросы"
         actions: "Действия"
         create_new_test: "Создать новый тест"
+        timer: "Таймер"
       show:
         test: "Тест"
         title: "Название"
@@ -73,6 +75,7 @@ ru:
         body: "Вопрос"
         create_new_question: "Создать новый вопрос"
         authorization_error_message: "При авторизации возникла ошибка"
+        timer: "Таймер"
       new:
         title: "Созадать новый тест"
 

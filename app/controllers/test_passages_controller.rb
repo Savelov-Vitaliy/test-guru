@@ -3,6 +3,9 @@ class TestPassagesController < AuthenticatedController
   before_action :set_test_passage, only: %i[show result update gist gist_params]
 
   def show
+    timer = @test_passage.test.timer # = 100
+    #timer ||= 100
+    @timer ||= timer if timer > 0
   end
 
   def result
@@ -13,6 +16,7 @@ class TestPassagesController < AuthenticatedController
   end
 
   def update
+    @timer = params[:timer]
     @test_passage.accept!(params[:answers_ids])
 
     if @test_passage.completed?
