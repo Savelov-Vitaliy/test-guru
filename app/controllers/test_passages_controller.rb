@@ -57,7 +57,7 @@ class TestPassagesController < AuthenticatedController
   end
 
   def time_is_up?
-    (Time.now - @time_start) > @timer
+    (Time.now - @time_start) > @timer if @timer > 0
   end
 
   def add_badge(badge)
