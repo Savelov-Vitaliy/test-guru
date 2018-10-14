@@ -7,6 +7,7 @@
         <%= "#{t('.title')} \'#{@test_passage.test.title}\'" %>
         <% if @timer %>
           <span class="Timer float-right" ><%= @timer %></span>
+          <span class="d-none" id="time_start" ><%= @time_start.to_i %></span>
         <% end %>
       </div>
 
