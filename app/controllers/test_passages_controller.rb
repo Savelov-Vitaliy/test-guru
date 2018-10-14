@@ -1,7 +1,7 @@
 class TestPassagesController < AuthenticatedController
 
   before_action :set_test_passage, only: %i[show result update gist gist_params]
-  before_action :set_time, only: %i[show result]
+  before_action :set_time, only: %i[show result update]
 
   def show
   end

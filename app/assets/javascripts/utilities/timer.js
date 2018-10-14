@@ -7,8 +7,8 @@ document.addEventListener('turbolinks:load', function(){
 
 function timer($timer) {
   var $form_timer = $('#timer');
-  var test_time = Number($timer.text());
-  var time_start = Number($('#time_start').text());
+  var test_time = $timer.text()*1;
+  var time_start = $('#time_start').text()*1;
   var sec = (time_start + test_time - time_now());
 
   $timer.text(min_sec(sec));
