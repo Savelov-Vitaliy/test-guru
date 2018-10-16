@@ -6,21 +6,19 @@ document.addEventListener('turbolinks:load', function(){
 });
 
 function timer($timer) {
-  var $form_timer = $('#timer');
-  var test_time = $timer.text()*1;
-  var time_start = $('#time_start').text()*1;
-  var sec = (time_start + test_time - time_now());
+  var $formTimer = $('#timer');
+  var sec = +$timer.text();
 
   $timer.text(min_sec(sec));
 
   var timer = setInterval(function() {
     sec -= 1
-    if ((time_now() - time_start) > test_time) {
+    if (sec <= 0) {
       clearInterval(timer);
-      window.location.replace(window.location.pathname+'/result');
+      $('#form-answer').submit();
     } else {
       $timer.text(min_sec(sec));
-      $form_timer.val(sec);
+      $formTimer.val(sec);
     };
   }, 1000);
 
@@ -29,7 +27,3 @@ function timer($timer) {
 function min_sec(sec) {
   return Math.floor(sec / 60) + ': ' + ("0" + sec % 60).slice(-2)
 }
-
-function time_now(){
-  return Math.floor(Date.now()/1000);
-};
