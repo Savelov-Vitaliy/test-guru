@@ -6,6 +6,7 @@ ru:
       user: "Пользователь"
       answer: "Ответ"
       question: "Вопрос"
+      badge: "Бейдж"
 
     attribute:
       test:
@@ -26,3 +27,6 @@ ru:
       answer:
         body: "Ответ"
         correct:  "Верный"
+
+
+

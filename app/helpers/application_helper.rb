@@ -24,4 +24,8 @@ module ApplicationHelper
     I18n.locale == :ru
   end
 
+  def show_badge(badge)
+    " #{octicon(:star, {style: 'fill:'+badge.color})}  #{badge.title} "
+  end
+
 end

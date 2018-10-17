@@ -4,15 +4,12 @@
     <div class="card">
       <div class="card-header">
         <%= t('.title') %>
+        <%= show_badge(@badge).html_safe %>
       </div>
 
       <div class="card-body">
-        <div class="card-title">
-          <%= @answer.question.body %>
-        </div>
-
         <div class="card-text">
-          <%= render 'form', answer: @answer %>
+          <%= render 'form', badge:@badge %>
         </div>
       </div>
     </div>

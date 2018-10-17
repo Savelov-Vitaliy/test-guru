@@ -9,10 +9,13 @@
     <%= form.text_field :title, class: "form-control mb-2" %>
 
     <%= form.label :level, t('.level') %>
-    <%= form.text_field :level, class: "form-control mb-2" %>
+    <%= form.text_field :level, class: "form-control mb-2", type: :number %>
 
     <%= form.label :category_id, t('.category') %>
     <%= form.collection_select :category_id, Category.all, :id, :title, {prompt: true}, {class: "form-control"} %>
+
+    <%= form.label :timer, t('.timer') %>
+    <%= form.text_field :timer, class: "form-control mb-2", type: :number %>
 
     <div class="text-right mt-3">
       <%= form.submit class: "btn btn-primary" %>

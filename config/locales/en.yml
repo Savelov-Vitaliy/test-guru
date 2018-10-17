@@ -166,6 +166,48 @@ en:
         user: "User"
         actions: "Actions"
 
+
+    badges:
+      new:
+        title: "Создать новый бейдж"
+      index:
+        title: "Список всех бейджей"
+        badge: "Бейдж"
+        rule: "Условие"
+        actions: "Действия"
+        create_new_badge: "Создать новый бейдж"
+      edit:
+        title: "Изменить бейдж"
+      create:
+        notice: "Бейдж \'%{badge}\' был успешно создан."
+      destroy:
+        notice: "Бейдж \'%{badge}\' был успешно удален."
+      update:
+        notice:  "Бейдж \'%{badge}\' был успешно обновлен."
+      question_not_found: "Бейдж не найден"
+      badge:
+        show: "показать"
+        edit: "изменить"
+        delete: "удалить"
+        confirmation: "Удалить этот бейдж?"
+      form:
+        title: "Название"
+        color: "Цвет"
+        rule: "Условие выдачи"
+
+        with_category: 'With the passage of all tests from the category'
+        with_level: 'With the passage of all tests with the level'
+        on_first_try: 'With the passage of any test on the first attempt'
+
+        red: "Red"
+        yellow: "Yellow"
+        lime: "Lime"
+        green: "Green"
+        blue: "Blue"
+        indigo: "Indigo"
+        black: "Black"
+        gray: "Gray"
+
   shared:
     links:
       all_tests: "All Tests"

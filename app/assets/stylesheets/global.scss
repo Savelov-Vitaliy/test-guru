@@ -5,3 +5,12 @@
 .hide {
   display: none;
 }
+
+label, input[type=checkbox] {
+  margin-top: 0.4em;
+  margin-bottom: 0;
+}
+
+.form-check label {
+  margin-top: 0;
+}

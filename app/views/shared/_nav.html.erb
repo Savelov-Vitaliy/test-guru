@@ -1,9 +1,11 @@
  <% if admin_section?
       navbar_bg = "bg-info"
       admin_panel = t(".admin_panel")
+      my_badges_path = admin_badges_path
     else
       navbar_bg = "bg-light"
-      admin_panel_link = link_to t(".admin_panel") + " . ", admin_tests_path
+      admin_panel_link = link_to t(".admin_panel"), admin_tests_path
+      my_badges_path = badges_path
     end
 
     if what_locale?
@@ -29,8 +31,24 @@
         <%= t(".welcome", user: current_user.full_name).html_safe %>
       </div>
       <div class="col-12 col-md-auto">
-        <%= admin_panel_link if current_user.admin? %>
-        <%= link_to t(".feedback"), new_feedback_path %> .
+
+        <%= link_to t(".admin_panel"), admin_tests_path if !admin_section? %>
+
+        <%= link_to t('.gist_question'), gist_test_passage_path(@test_passage), method: :post if
+            request.path.include?('test_passages') and !request.path.include?('result') %>
+
+        <%= link_to t('.all_tests'), admin_section? ? admin_tests_path : tests_path %>
+
+        <%= link_to "Gists . ", admin_gists_path if admin_section? %>
+
+        <%= link_to t(".badges"), my_badges_path %>
+
+        <%= link_to t(".feedback"), new_feedback_path if !admin_section? %>
+
+        <% unless request.path.include?('result') %>
+          <a href="" onclick="javascript:history.back(); return false;"><%= t('.back') %></a>
+        <% end %>
+
         <%= link_to t(".exit"),
                     destroy_user_session_path,
                     method: :delete,

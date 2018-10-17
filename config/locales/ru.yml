@@ -3,6 +3,8 @@ ru:
   language: "English"
   in_language: "[in English]"
 
+  your_new_achievements: "Поздравляем! Ваши новые достижения: "
+
   helpers:
     select:
       prompt: "- выберите из списка -"
@@ -36,6 +38,7 @@ ru:
         title:  "Название"
         level:  "Уровень"
         category: "Категория"
+        timer: "Таймер"
       test:
         show: "показать"
         edit: "изменить"
@@ -59,6 +62,7 @@ ru:
         questions: "Вопросы"
         actions: "Действия"
         create_new_test: "Создать новый тест"
+        timer: "Таймер"
       show:
         test: "Тест"
         title: "Название"
@@ -71,6 +75,7 @@ ru:
         body: "Вопрос"
         create_new_question: "Создать новый вопрос"
         authorization_error_message: "При авторизации возникла ошибка"
+        timer: "Таймер"
       new:
         title: "Созадать новый тест"
 
@@ -85,7 +90,10 @@ ru:
       show:
         title: "Вопрос к тесту \'%{test_title}\'"
         answers: "Ответы"
-        new_answer: "Новый ответ"
+        new_answer: "Создать новый ответ"
+        answer: "Ответ"
+        correct: "Верный"
+        actions: "Действия"
       question:
         show: "показать"
         edit: "изменить"
@@ -107,6 +115,8 @@ ru:
         edit: "изменить"
         delete: "удалить"
         confirmation: "Удалить этот ответ?"
+        _true: "Да"
+        _false: ""
       edit:
         title: "Изменить Ответ"
       form:
@@ -131,18 +141,75 @@ ru:
         user: "Пользователь"
         actions: "Действия"
 
+    badges:
+      new:
+        title: "Создать новый бейдж"
+      index:
+        title: "Список всех бейджей"
+        badge: "Бейдж"
+        rule: "Условие"
+        actions: "Действия"
+        create_new_badge: "Создать новый бейдж"
+      edit:
+        title: "Изменить бейдж"
+      create:
+        notice: "Бейдж \'%{badge}\' был успешно создан."
+      destroy:
+        notice: "Бейдж \'%{badge}\' был успешно удален."
+      update:
+        notice:  "Бейдж \'%{badge}\' был успешно обновлен."
+      question_not_found: "Бейдж не найден"
+      badge:
+        show: "показать"
+        edit: "изменить"
+        delete: "удалить"
+        confirmation: "Удалить этот бейдж?"
+      form:
+        title: "Название"
+        color: "Цвет"
+        rule: "Условие выдачи"
+        category: "Категория"
+        level: "Уровень сложности"
+
+        red: "Красный"
+        yellow: "Желтый"
+        lime: "Лайм"
+        green: "Зеленый"
+        blue: "Синий"
+        indigo: "Ингидо"
+        black: "Черный"
+        gray: "Серый"
+
+        with_category: 'При прохождении всех тестов из категории: '
+        with_level: 'При прохождении всех тестов с уровнем сложности: '
+        on_first_try: 'При прохождении любого теста с первой попытки'
+
+
+
+  badges:
+    index:
+      title: "Бейджи"
+      all_badges: "Бейджи"
+      users_badges: "Ваши бейджи"
+      count: "кол-во"
+
   shared:
     links:
       all_tests: "Все тесты"
       back: "Назад"
     nav:
-      feedback: "Обратная связь"
-      admin_panel: "Панель Администратора"
+      feedback: "Обратная связь ."
+      admin_panel: "Панель Администратора . "
       exit: "Выход"
       exit_confirm: "Выйти?"
       log_in: "Вход"
       sign_up: "Регистрация"
-      welcome: "Привет <b>%{user}</b> Гуру . "
+      welcome: "Привет <b>%{user}</b> Гуру"
+      badges: "Бейджи . "
+      gist_question: "Отправить на Gist . "
+      all_tests: "Все тесты . "
+      back: "Назад . "
+      create_new_test: "Создать новый тест . "
 
   test_passages:
     show:
@@ -157,6 +224,7 @@ ru:
       failed: "провал"
       test_failed: "Тест провален!"
       test_passed: "Тест пройден!"
+      time_is_up: "Время вышло"
     gist:
       success:  "Gist успешно сохранен"
       failure:  "Во время сохранения gist произошла ошибка"

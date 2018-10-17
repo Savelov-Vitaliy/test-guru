@@ -32,6 +32,11 @@ class TestPassage < ApplicationRecord
     score >= PASSING_SCORE
   end
 
+  def time_is_up?
+    sec = created_at + test.timer - Time.now
+    sec < 0
+  end
+
   private
 
   def before_save_set_current_question

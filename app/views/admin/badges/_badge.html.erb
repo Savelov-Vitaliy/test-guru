@@ -1,0 +1,10 @@
+<tr>
+  <td class="text-nowrap"> <%= show_badge(badge).html_safe %> </td>
+  <td> <%= t("admin.badges.form.#{badge.rule}") %> <%= badge.param %> </td>
+  <td> <%= link_to t('.edit'), edit_admin_badge_path(badge), class: "text-success" %> </td>
+  <td> <%= link_to t('.delete'),
+              admin_badge_path(badge),
+              method: :delete,
+              data: { confirm: t('.confirmation') }, class: "text-danger"  %>
+  </td>
+</tr>

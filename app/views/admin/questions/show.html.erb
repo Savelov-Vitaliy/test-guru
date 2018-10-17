@@ -19,7 +19,8 @@
               <tr>
                 <th scope="col">  # </th>
                 <th scope="col"> <%= t('.answer') %> </th>
-                <th scope="col" colspan=3> <%= t('.actions') %> </th>
+                <th scope="col"> <%= t('.correct') %> </th>
+                <th scope="col" colspan=2> <%= t('.actions') %> </th>
               </tr>
             </thead>
 
@@ -28,8 +29,7 @@
         </div>
       </div>
     </div>
+    <%= link_to t('.new_answer'), new_admin_question_answer_path(@question) %>
 
-    <%= link_to t('.new_answer'), new_admin_question_answer_path(@question) %>.
-    <%= render "shared/links" %>
   </div>
 </div>

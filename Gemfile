@@ -83,7 +83,4 @@ gem "octokit"
 
 # UI
 gem 'octicons_helper'
-# gem 'rake'
-
 gem 'cowsay'
-#gem 'sprockets-rails'
