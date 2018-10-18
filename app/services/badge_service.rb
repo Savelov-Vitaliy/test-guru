@@ -9,9 +9,7 @@ class BadgeService
   end
 
   def reward
-    reward_badges = []
-    Badge.all.each {|badge| reward_badges << badge if reward?(badge)}
-    reward_badges
+    Badge.all.each.with_object([]) {|badge, reward| reward << badge if reward?(badge)}
   end
 
   private
