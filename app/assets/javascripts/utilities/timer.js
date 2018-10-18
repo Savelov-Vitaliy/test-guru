@@ -6,20 +6,18 @@ document.addEventListener('turbolinks:load', function(){
 });
 
 function timer($timer) {
-  var $formTimer = $('#timer');
   var sec = +$timer.text();
-
   $timer.text(min_sec(sec));
 
-  var timer = setInterval(function() {
+  timer = setInterval(function() {
     sec -= 1
     if (sec <= 0) {
       clearInterval(timer);
       $('#form-answer').submit();
-    } else {
+    }
+    else {
       $timer.text(min_sec(sec));
-      $formTimer.val(sec);
-    };
+    }
   }, 1000);
 
 };

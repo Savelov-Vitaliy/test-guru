@@ -14,7 +14,7 @@
 
     <%= form.label :rule, t('.rule') %>
     <%= form.select :rule,
-                    @badge.class::RULES.map{ |r| [t(".#{r}"), r] },
+                    BadgeService::RULES.map{ |r| [t(".#{r}"), r] },
                     {prompt: true},
                     {class: "form-control"} %>
 

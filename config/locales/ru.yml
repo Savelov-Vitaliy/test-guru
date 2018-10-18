@@ -224,7 +224,7 @@ ru:
       failed: "провал"
       test_failed: "Тест провален!"
       test_passed: "Тест пройден!"
-      time_is_up: "Время вышло"
+      time_is_up: "Время вышло! "
     gist:
       success:  "Gist успешно сохранен"
       failure:  "Во время сохранения gist произошла ошибка"
