@@ -10,8 +10,7 @@ class TestPassagesController < AuthenticatedController
   def result
     @result_section = true
     flash.notice = t(".time_is_up") if @test_passage.time_is_up?
-    message = BadgeService.new(@test_passage).reward if @test_passage.passed?
-    flash.notice += message if message
+    BadgeService.new(@test_passage).reward.each {|new_badge| add_badge(new_badge)} if @test_passage.passed?
   end
 
   def update
@@ -57,6 +56,12 @@ class TestPassagesController < AuthenticatedController
 
   def set_section
     @test_passages_section = true
+  end
+
+  def add_badge(badge)
+    current_user.badges << badge
+    flash.notice ||= I18n.t(".your_new_achievements")
+    flash.notice += helpers.show_badge(badge)
   end
 
 end

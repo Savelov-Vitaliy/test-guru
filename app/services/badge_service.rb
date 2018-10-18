@@ -1,49 +1,39 @@
 class BadgeService
-  include ApplicationHelper, OcticonsHelper # for use helper: show_badge()
 
   RULES  = [:with_category, :with_level, :on_first_try]
 
   def initialize(test_passage)
     @test = test_passage.test
     @user = test_passage.user
-    users_test_passages = TestPassage.where(user_id: @user.id).select(:test_id, :correct_questions)
-    @tests_passages = users_test_passages.map(&:test_id)
-    @passed_tests = users_test_passages.select{|tp| tp.passed?}.map(&:test_id)
+    @passed_tests = @user.test_passages.where(successfull: true).map(&:test_id)
   end
 
-  def reward()
-    Badge.all.each {|badge| add_badge(badge) if reward?(badge)}
-    @message
+  def reward
+    reward_badges = []
+    Badge.all.each {|badge| reward_badges << badge if reward?(badge)}
+    reward_badges
   end
 
   private
-
-  def add_badge(badge)
-    @user.badges << badge
-    @message ||= I18n.t(".your_new_achievements")
-    @message += show_badge(badge)
-  end
 
   def reward?(badge)
     send badge.rule, badge.param
   end
 
   def with_category(category)
-    if @test.category.title == category
-      all_tests = Category.find_by(title: category).tests.ids
-      (all_tests - @passed_tests).empty?
-    end
+    return if @test.category.title != category
+    all_tests = Category.find_by(title: category).tests.ids
+    (all_tests - @passed_tests).empty?
   end
 
   def with_level(level)
-    if @test.level == level.to_i
-      all_tests = Test.where(level: level).ids
-      (all_tests - @passed_tests).empty?
-    end
+    return if @test.level != level.to_i
+    all_tests = Test.where(level: level).ids
+    (all_tests - @passed_tests).empty?
   end
 
   def on_first_try(*param)
-    @tests_passages.count(@test.id) == 1
+    @user.test_passages.map(&:test_id).count(@test.id) == 1
   end
 
 end

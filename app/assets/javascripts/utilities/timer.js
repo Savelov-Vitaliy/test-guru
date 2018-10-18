@@ -9,13 +9,13 @@ function timer($timer) {
   var sec = +$timer.text();
   $timer.text(min_sec(sec));
 
-  timer = setInterval(function() {
+  var timer = setInterval(function() {
     sec -= 1
-    if (sec <= 0) {
+  if (sec <= 0) {
       clearInterval(timer);
       $('#form-answer').submit();
     }
-    else {
+  else {
       $timer.text(min_sec(sec));
     }
   }, 1000);
