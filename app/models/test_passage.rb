@@ -13,6 +13,7 @@ class TestPassage < ApplicationRecord
 
   def accept!(answer_ids)
     self.correct_questions += 1 if correct_answer?(answer_ids)
+    self.successfull = true if passed?
     save!
   end
 
@@ -34,7 +35,15 @@ class TestPassage < ApplicationRecord
 
   def time_is_up?
     sec = created_at + test.timer - Time.now
-    sec < 0
+    sec < 0 if time_limited?
+  end
+
+  def sec_left
+    (created_at + test.timer - Time.current).round
+  end
+
+  def time_limited?
+    test.timer != 0
   end
 
   private

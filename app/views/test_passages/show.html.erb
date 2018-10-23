@@ -5,7 +5,7 @@
 
       <div class="card-header">
         <%= "#{t('.title')} \'#{@test_passage.test.title}\'" %>
-        <%= content_tag :span, @timer, class: "Timer float-right" if @timer != 0 %>
+        <%= content_tag :span, @timer, class: "Timer float-right" if @timer %>
       </div>
 
        <div class="card-body">

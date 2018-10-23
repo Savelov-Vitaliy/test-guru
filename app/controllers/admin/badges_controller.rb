@@ -15,21 +15,21 @@ class Admin::BadgesController < Admin::BaseController
 
   def create
     @badge = Badge.new(badge_params)
-    @badge.save ? badges_redirect : render(:new)
+    @badge.save ? redirect_to_badges : render(:new)
   end
 
   def update
-    @badge.update(badge_params) ? badges_redirect : render(:edit)
+    @badge.update(badge_params) ? redirect_to_badges : render(:edit)
   end
 
   def destroy
     @badge.destroy
-    badges_redirect
+    redirect_to_badges
   end
 
   private
 
-  def badges_redirect
+  def redirect_to_badges
     redirect_to admin_badges_path, notice: t('.notice', badge: helpers.show_badge(@badge))
   end
 
