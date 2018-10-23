@@ -10,13 +10,13 @@ class TestPassagesController < AuthenticatedController
   def result
     @result_section = true
     flash.notice = t(".time_is_up") if @test_passage.time_is_up?
-    BadgeService.new(@test_passage).reward.each {|new_badge| add_badge(new_badge)} if @test_passage.passed?
   end
 
   def update
     @test_passage.accept!(params[:answers_ids])
 
     if @test_passage.completed? || @test_passage.time_is_up?
+      BadgeService.new(@test_passage).reward.each {|new_badge| add_badge(new_badge)} if @test_passage.passed?
       TestsMailer.completed_test(@test_passage).deliver_now
       redirect_to result_test_passage_path(@test_passage)
     else
