@@ -1,7 +1,5 @@
 class BadgeService
 
-  RULES  = [:with_category, :with_level, :on_first_try]
-
   def initialize(test_passage)
     @test = test_passage.test
     @user = test_passage.user
